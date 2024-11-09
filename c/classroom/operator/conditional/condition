@@ -1,0 +1,26 @@
+// conditional operator
+
+symbol:
+
+? :
+
+ternary operator (needs three operands to perform task)
+
+to perform decision making task it is useful
+
+syntax:
+
+op1 ? op2 : op3 ;
+
+if op1 is zero then result of this operator will be op3
+if op1 is non zero then result of this operator will be op2
+
+
+
+
+
+
+
+
+
+

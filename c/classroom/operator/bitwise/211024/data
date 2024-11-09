@@ -1,0 +1,94 @@
+A  B  A&B
+0  0   0
+0  1   0
+1  0   0
+1  1   1
+-------------------------
+A  B  A|B
+0  0   0
+0  1   1
+1  0   1
+1  1   1
+------------------------
+A  B  A^B
+0  0   0
+0  1   1
+1  0   1
+1  1   0
+---------------------
+A    ~A
+0     1
+1     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arithmetic operators
++ - * / %
+Relational operators
+> >= < <= == !=
+Logical operators
+&& || !
+Assignment operator
+=
+inc and dec
+++ --
+sizeof operators
+sizeof()
+Bitwise operators
+& | ^ ~
+shift operators
+<<  >>
+conditional operator
+? :
+,
+[] () . ->
+& reference operatror
+* pointer operartor
++= -= *= /= %=
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+// logical operators
+
+are used to perform logcal operations on data
+
+op1 && op2      logical and    (binary)   
+op1 || op2      logical or     (binary)
+!op             logical not    (unary)
+
+these operators can not modify the operand
+
+these operators result will be  zero or one.
+
+in logical and if first operand is zero (0)
+then it will not check second operand 
+
+in logical or if first operand is non zero 
+then it will not check second operand
+
+
+
+
+
+
+
+

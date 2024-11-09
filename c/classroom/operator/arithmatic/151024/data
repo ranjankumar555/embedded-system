@@ -1,0 +1,36 @@
+Arithmetic operators
++ - * / %
+Relational operators
+> >= < <= == !=
+Logical operators
+&& || !
+Assignment operator
+=
+inc and dec
+++ --
+sizeof operators
+sizeof()
+Bitwise operators
+& | ^ ~
+shift operators
+<<  >>
+conditional operator
+? :
+,
+[] () . ->
+& reference operatror
+* pointer operartor
++= -= *= /= %=
+
+
+
+
+
+
+
+
+
+
+
+
+

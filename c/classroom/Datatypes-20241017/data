@@ -1,0 +1,50 @@
+preprocessor
+---------------
+input:.c
+output:.i
+
+	Header file inclusion.
+	Remove comments.
+	Macro replacement.
+	conditional compilation.
+$cc -E p1.c -o p1.i
+--------------------------------------
+Translator
+input:.i
+output:.s
+	check syntax errors
+	convert the code into ASM
+$cc -S p1.i -o p1.s
+------------------------------------
+Assembler
+input:.s
+output:.o
+		convert ASM code into OPCODES
+		object file
+$cc -c p1.s -o p1.o
+------------------------------------------------
+Linker
+input:.o
+output:a.out
+		Links with Library
+		Add os info to the code
+$cc p1.o
+    or
+$cc p1.o -o p1
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

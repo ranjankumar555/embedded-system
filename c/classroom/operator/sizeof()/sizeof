@@ -1,0 +1,21 @@
+sizeof operator
+
+sizeof() is used to find size of any datatype,
+variable, constant or expression
+
+symbol:   sizeof()
+
+syntax: 
+
+sizeof(variable/constant/datatype/expression);
+
+result of sizeof operator will be size in the form of unsigned long int
+
+
+
+
+
+
+
+
+
