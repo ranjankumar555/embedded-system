@@ -1,11 +1,7 @@
 #include<stdio.h>
-void delAnyEle(int *a, int size){
-	int pos;
-	printf("Delete index: ");
-	scanf("%d", &pos);
+void delAnyEle(int *a, int pos, int size){
 	for(int i = pos; i<size-1; i++){
 		a[i] = a[i+1];
-
 	}
 }
 int main(){
@@ -15,9 +11,20 @@ int main(){
 	for(int i = 0; i<n; i++){
 		scanf("%d", &a[i]);
 	}
-	delAnyEle(a,n);
-	delAnyEle(a,n-1);
-	for(int i=0; i<n-2; i++){
+	
+	printf("enter index1: ");
+	int pos1;
+	scanf("%d",&pos1);
+	delAnyEle(a,pos1,n);
+	
+	printf("enter index2: ");
+	int pos2;
+	scanf("%d",&pos2);
+	if(pos2>pos1) pos2-- ;
+	delAnyEle(a,pos2,n);
+
+
+	for(int i=0; i<n; i++){
 		printf("%d ", a[i]);
 	}
 
