@@ -6,9 +6,11 @@
 
 #include<stdio.h>
 void main(){
-        for(int i=0; i<3; i++){
+	
+        for(int i=0, k=3; i<3; i++, k=3-i){
+		
                 for(int j=0; j<3-i; j++){
-                        printf("%d ",i);
+                        printf("%d ",k--);
                 }
                 printf("\n");
         }
