@@ -6,8 +6,11 @@ int main(){
 	char str1[20], str2[20]; 
 	scanf("%s", str1);
 	scanf("%s", str2);
-
-	int r = mystrcmp(str1,str2);
+	
+	int n;
+	printf("Enter n: ");
+	scanf("%d",&n);
+	int r = mystrcmp(str1,str2, n);
 	printf("cmp result = %d\n", r);
 	if(r==0){
 		printf("s1 == s2");
@@ -37,7 +40,7 @@ int mystrcmp(const char* s1, const char* s2){
 /* pointer method */
 int mystrcmp(const char* s1, const char* s2, int n){
 	int *p; 
-	while(*s1){
+	while(n--){
 		if(*s1 != *s2) break;
 		s1++;
 		s2++;

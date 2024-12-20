@@ -21,6 +21,7 @@ int main(){
 	
 	char* p= NULL;
 	int n = count(s,ch);
+	printf("count = %d\n",n);
 	while(n--){
 		p = strchr(s,ch);
 		strcpy(p, p+1);
