@@ -1,4 +1,5 @@
 #include<stdio.h>
+static int count =0;
 void shiftLeft(int *a, int pos, int len){
 	for(int i = pos; i<len-1; i++){
 		a[i] = a[i+1];
