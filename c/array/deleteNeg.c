@@ -1,14 +1,13 @@
 #include<stdio.h>
-static int count;
-void shiftLeft(int *a, int pos, int len){
-        for(int i = pos; i<len-1; i++){
+void delete(int *a, int pos, int *len){
+        for(int i = pos; i<*len-1; i++){
                 a[i] = a[i+1];
         }
-        count++;
+        (*len)--;
 }
 
 void print(int *a, int n){
-        for(int i=0; i<n-count; i++){
+        for(int i=0; i<n; i++){
                 printf("%d ", *(a+i));
         }
         printf("\n");
@@ -16,12 +15,12 @@ void print(int *a, int n){
 
 int main(){
         int a[] = {-11, 12, -14, 13, -15, -18};
-        int n = sizeof(a)/sizeof(a[0]);
-        printf("n = %d\n", n);
+        
+	int n = sizeof(a)/sizeof(a[0]);
+	printf("After deleting Negative element: \n");
         for(int i=0; i<n; i++){
                 if(a[i]< 0){
-                        printf("%d\n", a[i]);
-                        shiftLeft(a, i, n);
+                        delete(a, i, &n);
                         i--;
                 }
         }
