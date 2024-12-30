@@ -32,14 +32,14 @@ void del_fun(char* s){
 */
 /*** optimised ***/
 void del_fun(char* s) {
-    bool seen[256] = {0};  // Array to track characters seen (ASCII 0-255)
-    int j = 0;  // Pointer to the current position in the string
-
+    bool visit[256] = {0};  
+    int j = 0;  
+g
     for (int i = 0; s[i]; i++) {
-        if (!seen[(unsigned char)s[i]]) {  // If character not seen before
-            s[j++] = s[i];  // Copy character to the new position
-            seen[(unsigned char)s[i]] = true;  // Mark it as seen
+        if (!visit[(unsigned char)s[i]]) {  
+            s[j++] = s[i];  
+            visit[(unsigned char)s[i]] = true;  
         }
     }
-    s[j] = '\0';  // Null-terminate the modified string
+    s[j] = '\0';  
 }
