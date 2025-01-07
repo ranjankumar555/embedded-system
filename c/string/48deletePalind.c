@@ -1,7 +1,9 @@
 #include<stdio.h>
-#include<string.h>
+
 void deletePalindrome(char* );
 int isPalindrome(char*, char*);
+void mystrcpy(char*, char*);
+
 int main(){
 	char s[20];
 	printf("enter string: ");
@@ -23,9 +25,9 @@ void deletePalindrome(char* p){
 		else{
 			q = p-count;
 			if(isPalindrome(q,p-1)){
-				strcpy(q,p+1);
+				mystrcpy(q,p+1);
+				p = q;
 			}
-
 			count =0;
 		}
 		p++;
@@ -33,9 +35,10 @@ void deletePalindrome(char* p){
 	q = p-count;
 
 	if(isPalindrome(q,p-1)){
-		strcpy(q,p-1);
+		mystrcpy(q,p-1);
 	}
 }
+
 int isPalindrome(char* s1, char* s2){
 	
 	while(s1<s2){
@@ -48,6 +51,11 @@ int isPalindrome(char* s1, char* s2){
 	return 1;
 }
 
-
-
-
+void mystrcpy(char* d, char* s){
+	while(*s){
+		*d = *s;
+		d++;
+		s++;
+	}
+	*d = '\0';
+}
