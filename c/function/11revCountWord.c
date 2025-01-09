@@ -1,58 +1,68 @@
 #include<stdio.h>
-void revWord(char* s);
-int countWord(char *s);
-int len(char *s);
+#define ISDIGIT(x) x>='0' && x<='9'
+void revWord(char*);
+int countWord(char *);
+void reverse(char *, char*);
+
 int main(){
 	char str[30];
-	printf("Enter the string: ");
-	scanf("%d", str);
+	printf("Enter string: ");
+	scanf("%[^\n]s", str);
 
 	revWord(str);
-	countWord(str);
+	int count  = countWord(str);
+
+	printf("reversed word = %s\n",str);
+	printf("word count = %d\n", count);
 
 	return 0;
 }
+
 void revWord(char* s){
-	int i, j=0, count=0;
-	char temp[30], t, *q;
-	for(i =0; s[i]; i++){
-		if(s[i] != ' '){
-			temp[j++] = s[i];
-			
+	char *p = s;
+       	int count =0;
+
+	while(*s){
+		if(*s!=' '){
+			count++;
 		}
 		else{
-			temp[j] ='\0';
-			count += countWord(temp);
-			q = s + len(temp) -1;
-			while(temp < q){
-				t = *temp;
-				*temp = *q;
-				*q = t;
-				temp++;
-				q--;
-			}
-			printf("%s", temp);
+			p = s-count;
+			reverse(p,s-1);
+			count=0;
 		}
-		
-
-
-
-int countWord(char *s){
-	int count = 0;
-	for(int i=0; s[i]; i++){
-		if(s[i] <= '9' && s[i] >= '0')
-		{
-			count =1;
-			break;
-		}
+		s++;
 	}
+	//for last word
+	p = s-count;
+	reverse(p,s-1);
+}
+ 
+int countWord(char *p ){
+	int count = 0, flag = 0;
+	while(*p){
+		if(ISDIGIT(*p)){
+			flag = 1;
+		}
+		else if(*p == ' ' && flag){
+			count++;
+			flag = 0;
+		}
+		p++;
+	}
+	//for last word
+	if(flag) count++;
 	return count;
 }
 
+void reverse(char* p, char* q){
+	char temp;
+	while(p<q){
+		temp = *p;
+		*p = *q;
+		*q = temp;
 
-
-int len(char* st){
-int i;
-for(i =0; st[i]; i++);
-return i;
+		p++;
+		q--;
+	}
 }

@@ -19,16 +19,17 @@ void deleteLargest(char *p){
 			count++;
 		}
 		else{
-			if(count>prevCount){
+			if(count>=prevCount){
 				prevCount = count;
 				q = p - prevCount;
+				mystrcpy(q, q+prevCount);
 			}
 			count=0;
 		}
 		p++;
 	}
 	//for last word
-	if(count>prevCount){
+	if(count>=prevCount){
 		prevCount = count;
 		q = p - prevCount;
 	}

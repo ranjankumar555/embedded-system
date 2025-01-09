@@ -34,7 +34,7 @@ void del_fun(char* s){
 void del_fun(char* s) {
     bool visit[256] = {0};  
     int j = 0;  
-g
+
     for (int i = 0; s[i]; i++) {
         if (!visit[(unsigned char)s[i]]) {  
             s[j++] = s[i];  
