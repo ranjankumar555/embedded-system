@@ -1,0 +1,9 @@
+RollNo	Name	Total	Grade
+------------------------------
+2	Piyush	514	A
+1	Ranjan	424	B
+3	Munna	306	C
+5	Panda	256	C
+4	Rishabh	240	D
+6	Animesh	225	D
+------------------------------
