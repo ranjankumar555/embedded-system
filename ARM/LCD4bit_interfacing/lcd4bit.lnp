@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "lcd4bitdriver.o" "main.o" "delay.o" --strict --scatter "lcd4bit.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\lcd4bit.map" -o "lcd4bit.axf"

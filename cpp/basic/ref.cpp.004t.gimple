@@ -1,0 +1,56 @@
+int main() ()
+{
+  int D.40148;
+
+  {
+    int x;
+    int & rv;
+
+    try
+      {
+        x = 10;
+        rv = &x;
+        std::operator<< <std::char_traits<char> > (&cout, "enter number: ");
+        std::basic_istream<char>::operator>> (&cin, rv);
+        x.0_1 = x;
+        _2 = std::basic_ostream<char>::operator<< (&cout, x.0_1);
+        _3 = std::operator<< <std::char_traits<char> > (_2, " ");
+        _4 = *rv;
+        _5 = std::basic_ostream<char>::operator<< (_3, _4);
+        std::basic_ostream<char>::operator<< (_5, endl);
+        D.40148 = 0;
+        return D.40148;
+      }
+    finally
+      {
+        x = {CLOBBER};
+      }
+  }
+  D.40148 = 0;
+  return D.40148;
+}
+
+
+void __static_initialization_and_destruction_0(int, int) (int __initialize_p, int __priority)
+{
+  if (__initialize_p == 1) goto <D.40156>; else goto <D.40157>;
+  <D.40156>:
+  if (__priority == 65535) goto <D.40158>; else goto <D.40159>;
+  <D.40158>:
+  std::ios_base::Init::Init (&__ioinit);
+  __cxa_atexit (__comp_dtor , &__ioinit, &__dso_handle);
+  goto <D.40160>;
+  <D.40159>:
+  <D.40160>:
+  goto <D.40161>;
+  <D.40157>:
+  <D.40161>:
+}
+
+
+(static initializers for ref.cpp) ()
+{
+  __static_initialization_and_destruction_0 (1, 65535);
+}
+
+

@@ -1,0 +1,67 @@
+Basic Assignments
+-----------------
+1. Write an Embedded C Program (ECP) to transmit letters 'A' to 'Z' serially using UART0 at a baud rate of 115200 bps. Use the 8N1 data frame format (8 data bits, no parity, 1 stop bit) for communication. Verify the output on the serial terminal."
+
+2. Write an Embedded C Program (ECP) to transmit the digits '0' to '9' sequentially to the serial terminal with each switch press. Ensure that the switch press count is sent only after the switch is released following a press.
+
+3. Write an Embedded C Program (ECP) to receive a single character serially using UART0 and display it on an alphanumeric LCD. Display the received character on the first line of the LCD. On the second line, display its opposite character (e.g., 'A' ↔ 'a', 'B' ↔ 'b'). Special characters should be displayed as it is on the first line, and no opposite character should be shown on the second line.
+
+4. Write an Embedded C Program (ECP) to receive a single character serially using UART0 and display its ASCII value on an alphanumeric LCD. Show the received character as it is on the first line of the LCD, and display its ASCII value in a 3-digit format on the second line.
+
+5. Write an Embedded C Program (ECP) to receive a two-digit number from the serial terminal using UART0 of a microcontroller. Check whether the received number is a prime number or not, and send the result back to the serial terminal.
+eg: On the serial terminal
+Enter number: 07(press enter key to display result)
+Result: Prime 
+Enter number: 08
+Result: Not prime
+Enter number: 
+
+6. Write an Embedded C Program (ECP) to send the count of switch presses to the serial terminal using UART0, following the format given below.
+
+The output on the serial terminal should be:
+
+Switch is pressed 01 times (if the switch is pressed for the 1st time)
+Switch is pressed 02 times (if the switch is pressed for the 2nd time)
+Switch is pressed 03 times (if the switch is pressed for the 3rd time) ...
+Switch is pressed 99 times (if the switch is pressed for the 99th time)
+Switch is pressed 01 times (reset the switch press counter after 99).
+
+
+7. Write an Embedded C Program (ECP) to display the following menu on the serial terminal from a microcontroller:
+
+Menu on the serial terminal:
+
+a. LED1 ON
+b. LED1 OFF
+c. LED2 ON
+d. LED2 OFF
+e. Both LEDs ON
+f. Both LEDs OFF
+Command: Upon typing any command (e.g., a) and pressing Enter, the microcontroller should process the command to control the corresponding LEDs.
+
+ 
+8. Implement a password authentication application using UART. Declare a default password in the embedded C program, e.g., "ABCD".
+Note: Do not use any predefined library functions like strcpy.
+
+On the serial terminal:
+
+Enter Password: xxxx (press the Enter key)
+Result: Correct password
+
+Enter Password: xxxx (press the Enter key)
+Result: Wrong password
+
+Enter Password:
+
+
+9. Write an Embedded C Program (ECP) to scan a string from the serial terminal and check whether it is a palindrome or not.
+
+Example Output on the Serial Terminal:
+Enter a string: malayalam
+Result: Palindrome
+
+Enter a string: hello
+Result: Not a palindrome
+
+
+

@@ -1,0 +1,1 @@
+-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "lcd8bitdriver.o" --omf_browse "lcd8bitdriver.crf" --depend "lcd8bitdriver.d" "lcd8bitdriver.c"
