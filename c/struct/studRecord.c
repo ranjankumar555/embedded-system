@@ -55,7 +55,7 @@ int main(){
 			case 2: printf("rollno\tmarks\n");
 				for(i = 0; i<n; i++){
 					len = strlen(st[i]->name);
-					if(len&1 == 0){
+					if((len & len-1) == 0){
 						printf("%d\t%f\n", st[i]->rollno, st[i]->marks);
 					}
 				}
@@ -70,11 +70,12 @@ int main(){
 				break;
 			case 4: printf("student marks between 50 to 80\n");
 				for(i =0; i<n; i++){
-					if(st[i]->marks >= 50 && st[i]->marks <=80){
+					if((st[i]->marks >= 50) && (st[i]->marks <=80)){
 						printf("%s\n", st[i]->name);
 					}
+				}
 					break;
-			case 5: printf("roolno\tname\n");
+			case 5: printf("rollno\tname\n");
 				
 			       	float maxm = 0;
 				for(i =0; i<n; i++){
@@ -86,7 +87,7 @@ int main(){
 				printf("%d\t%s\n", st[j]->rollno, st[j]->name);
 				break;
 
-			case 6: printf("roolno\tname\n");
+			case 6: printf("rollno\tname\n");
 				
 			       	float minm = 100;
 				for(i =0; i<n; i++){
@@ -101,9 +102,9 @@ int main(){
 			default: printf("wrong choice\n:");
 		}
 	}
-
+	
 	return 0;
-}
+
 }
 int isVowel(char* p){
 	int count =0;
