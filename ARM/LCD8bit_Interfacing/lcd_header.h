@@ -7,4 +7,5 @@ void lcd_init(void);
 void delay_ms(unsigned int ms);
 void delay_sec(unsigned int sec);
 void lcd_str(unsigned char* p);
+void lcd_cgram(void);
 #endif

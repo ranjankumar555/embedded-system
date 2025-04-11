@@ -13,10 +13,10 @@
 ### ADS-LD Output File: 'lcd4bit.axf'
 ### ADS-LD Command File: 'lcd4bit.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'lcd4bit.lnp', Handle=0x00000120
+### Creating CmdFile 'lcd4bit.lnp', Handle=0x00000388
 ### Writing '.lnp' file
 ### ADS-LD Command file 'lcd4bit.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
-### ADS-LD: executed with 0 errors
+### ADS-LD: executed with 45 errors
 ### Updating obj list
 ### LDADS_file() completed.

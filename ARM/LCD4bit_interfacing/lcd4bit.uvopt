@@ -194,37 +194,37 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>2</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>4</ColumnNumber>
+      <ColumnNumber>21</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>62</TopLine>
-      <CurrentLine>68</CurrentLine>
+      <TopLine>69</TopLine>
+      <CurrentLine>75</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\lcd4bitDriver.c</PathWithFileName>
       <FilenameWithoutPath>lcd4bitDriver.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>3</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>16</ColumnNumber>
+      <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>12</CurrentLine>
+      <CurrentLine>2</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\LCD8bit_Interfacing\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>4</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -236,14 +236,14 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>5</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>30</ColumnNumber>
+      <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>9</CurrentLine>
+      <CurrentLine>10</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\LCD8bit_Interfacing\lcd_header.h</PathWithFileName>
       <FilenameWithoutPath>lcd_header.h</FilenameWithoutPath>
@@ -255,25 +255,31 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>1</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\lcd4bitDriver.c</Name>
-          <ColumnNumber>4</ColumnNumber>
-          <TopLine>62</TopLine>
-          <CurrentLine>68</CurrentLine>
+          <ColumnNumber>20</ColumnNumber>
+          <TopLine>69</TopLine>
+          <CurrentLine>72</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\LCD8bit_Interfacing\main.c</Name>
-          <ColumnNumber>16</ColumnNumber>
+          <ColumnNumber>13</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>12</CurrentLine>
+          <CurrentLine>7</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\LCD8bit_Interfacing\lcd_header.h</Name>
-          <ColumnNumber>30</ColumnNumber>
+          <ColumnNumber>5</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>9</CurrentLine>
+          <CurrentLine>10</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\LCD8bit_Interfacing\delay.c</Name>
+          <ColumnNumber>26</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>3</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

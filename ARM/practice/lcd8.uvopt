@@ -262,19 +262,45 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>6</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
-      <CurrentLine>14</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\lcd8bitdriver.c</PathWithFileName>
       <FilenameWithoutPath>lcd8bitdriver.c</FilenameWithoutPath>
     </File>
   </Group>
+
+  <AlienFiles>
+    <PathWithFilename>E:\V24BE5R2\V24BE5\ARM\PRACTICE\uart_interrupt.c</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>1</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
 
   <MDIGroups>
     <Orientation>1</Orientation>
@@ -285,9 +311,9 @@
       <Documents>
         <Doc>
           <Name>.\main.c</Name>
-          <ColumnNumber>17</ColumnNumber>
-          <TopLine>4</TopLine>
-          <CurrentLine>12</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\delay.c</Name>
@@ -304,8 +330,14 @@
         <Doc>
           <Name>.\lcd8bitdriver.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>13</TopLine>
+          <TopLine>1</TopLine>
           <CurrentLine>14</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>E:\v24be5r2\v24be5\ARM\practice\uart_interrupt.c</Name>
+          <ColumnNumber>1</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
