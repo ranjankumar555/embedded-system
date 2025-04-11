@@ -14,7 +14,28 @@ void uart0_handler(void) __irq{
 	}				    
 	VICVectAddr = 0;					
 }
-
+void uart0_intrptrx_str(void) __irq{
+	static int i;
+	int v = U0IIR;
+	v = v&0X0E;
+	if(v == 4){
+		arr[i++] = U0RBR;
+		U0THR = arr[i-1]; // loopback
+		while(THRE == 0);
+		
+		if(i == 19){
+			arr[i++] = '\0';
+			i=0;
+			f1 = 1;
+		}
+		if(arr[i-1] == '\r'){
+			arr[i-1] = '\0';
+			i = 0;
+			f1 = 1;
+		}
+	}
+	VICVectAddr = 0;	
+}
 void config_vic_for_uart0(void){
 	
 	VICIntSelect = 0; 			//all irq type
