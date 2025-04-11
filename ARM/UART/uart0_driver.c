@@ -24,7 +24,7 @@ void uart0_rx_str(char *arr, unsigned int len){
 	for(i=0; i<len; i++){
 		while(RDR == 0);
 		arr[i] = U0RBR;
-		U0THR = arr[i];
+		U0THR = arr[i]; // loopback
 		while(THRE == 0);
 
 		if(arr[i]=='\r' || arr[i] == ' ')
