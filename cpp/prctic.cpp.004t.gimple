@@ -1,0 +1,66 @@
+int main() ()
+{
+  int D.40174;
+
+  {
+    struct A a;
+
+    try
+      {
+        A::A (&a);
+        A::getdata (&a);
+        D.40174 = 0;
+        return D.40174;
+      }
+    finally
+      {
+        a = {CLOBBER};
+      }
+  }
+  D.40174 = 0;
+  return D.40174;
+}
+
+
+A::A() (struct A * const this)
+{
+  MEM[(struct  &)this] = {CLOBBER};
+  {
+    this->a = 5;
+  }
+}
+
+
+void A::getdata() const (const struct A * const this)
+{
+  this->a = 200;
+  _1 = std::operator<< <std::char_traits<char> > (&cout, "a = ");
+  _2 = this->a;
+  _3 = std::basic_ostream<char>::operator<< (_1, _2);
+  std::basic_ostream<char>::operator<< (_3, endl);
+}
+
+
+void __static_initialization_and_destruction_0(int, int) (int __initialize_p, int __priority)
+{
+  if (__initialize_p == 1) goto <D.40181>; else goto <D.40182>;
+  <D.40181>:
+  if (__priority == 65535) goto <D.40183>; else goto <D.40184>;
+  <D.40183>:
+  std::ios_base::Init::Init (&__ioinit);
+  __cxa_atexit (__comp_dtor , &__ioinit, &__dso_handle);
+  goto <D.40185>;
+  <D.40184>:
+  <D.40185>:
+  goto <D.40186>;
+  <D.40182>:
+  <D.40186>:
+}
+
+
+(static initializers for prctic.cpp) ()
+{
+  __static_initialization_and_destruction_0 (1, 65535);
+}
+
+

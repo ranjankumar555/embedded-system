@@ -9,17 +9,51 @@ Project File Date:  02/06/2025
 <h2>Output:</h2>
 Build target 'Target 1'
 compiling lcd4bitDriver.c...
-compiling delay.c...
-linking...
-Program Size: Code=1408 RO-data=16 RW-data=0 ZI-data=1256  
-FromELF: creating hex file...
-"lcd4bit.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-assembling Startup.s...
-compiling lcd4bitDriver.c...
 compiling main.c...
-compiling delay.c...
 linking...
-Program Size: Code=1408 RO-data=16 RW-data=0 ZI-data=1256  
-FromELF: creating hex file...
-"lcd4bit.axf" - 0 Error(s), 0 Warning(s).
+lcd4bit.axf: Error: L6366E: dc.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: heapauxi.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: __main.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: rtentry.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: rtentry2.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: rtentry4.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: sys_stackheap_outer.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: exit.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: boardinit1.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: boardinit2.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: boardinit3.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: libinit.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: libspace.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: rtexit.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: libinit2.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: fpinit.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: rtexit2.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6367E: argv_veneer.o(.emb_text) attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: sys_exit.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: boardshut.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: _get_argv_nomalloc.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: no_argv.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: libshutdown.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: sys_command.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: use_no_semi.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: indicate_semi.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: hrguard.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_rtmem_outer.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_rtmem_formal.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: libshutdown2.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: rt_raise.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_exit.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_rtmem_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: __raise.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_general.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: sys_wrch.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_abrt_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_fpe_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_rtred_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_stak_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_pvfn_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_cppl_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_segv_inner.o attributes are not compatible with the provided cpu and fpu attributes .
+lcd4bit.axf: Error: L6366E: defsig_other.o attributes are not compatible with the provided cpu and fpu attributes .
+Target not created

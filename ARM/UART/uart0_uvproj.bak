@@ -407,9 +407,29 @@
               <FilePath>.\header.h</FilePath>
             </File>
             <File>
+              <FileName>lcd4bitDriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lcd4bitDriver.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart_interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart_interrupt.c</FilePath>
+            </File>
+            <File>
               <FileName>uart0_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\uart0_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\adc_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>main_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main_adc.c</FilePath>
             </File>
           </Files>
         </Group>

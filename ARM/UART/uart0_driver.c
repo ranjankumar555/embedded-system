@@ -3,7 +3,7 @@
 #define THRE ((U0LSR >>5) & 1) // txFlag
 #define RDR (U0LSR & 1)		   // rxFlag
 
-void uart0_tx_data(unsigned char data){
+void uart0_tx(unsigned char data){
 	U0THR = data;	  //assign data
 	while(THRE == 0); //txflag monitoring
 
@@ -15,7 +15,7 @@ void uart0_tx_str(char* str){
 		str++;
 	}
 }
-unsigned int uart0_rx_data(void){
+unsigned int uart0_rx(void){
  	 while(RDR == 0);
 	 return U0RBR;
 }
