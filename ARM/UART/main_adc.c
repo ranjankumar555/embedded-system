@@ -1,4 +1,4 @@
-#include "header.h"
+/*#include "header.h"
 #include<stdio.h>
 unsigned char temp, flag;
 int f1;
@@ -20,7 +20,7 @@ int main(){
 	}
 
 }
-
+*/
 
 /* MCP9700 temperature sensor interfacing */
 /*int main(){

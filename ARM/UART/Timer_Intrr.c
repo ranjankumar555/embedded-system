@@ -1,17 +1,17 @@
 #include <lpc21xx.h>
 extern int f1;
-static int f2 = 0;
+static int f3 = 0;
 
 void timer1_handler() __irq
 {	
 	f1 = 1;
-	if(f2){
+	if(f3){
 		IOSET0 = 1<<17;
-		f2 = 0;
+		f3 = 0;
 	}
 	else{
 		IOCLR0 = 1<<17;
-		f2 = 1;
+		f3 = 1;
 	}
 
 
@@ -28,9 +28,9 @@ void config_vic_for_timer1(void){
 }
 void timer1_config(){
 	T0PC=0;
-	T0PR=15000-1;
+	T0PR=15000000-1;
 	T0TC=0;
-	T0MR0=100;
+	T0MR0=10;
 	T0MCR=3;
 	T0TCR=1;
 }

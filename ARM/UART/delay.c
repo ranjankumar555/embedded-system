@@ -1,5 +1,5 @@
  #include<lpc21xx.h>
-  extern int p;
+ extern int p;
  void delay_ms(unsigned char ms){
  T0TC =0;
  T0PC = 0;

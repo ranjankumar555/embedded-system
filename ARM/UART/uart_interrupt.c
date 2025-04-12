@@ -3,7 +3,9 @@
 #define LED1 (1<<17)
 #define LED2 (1<<18)
 #define LED3 (1<<19)
-extern unsigned char temp, flag;
+#define THRE ((U0LSR >>5) & 1)
+extern unsigned char temp, flag, f2;
+extern char arr[10];
 void uart0_handler(void) __irq{
 	int v = U0IIR;
 	v &= 0x0E;
@@ -26,12 +28,12 @@ void uart0_intrptrx_str(void) __irq{
 		if(i == 19){
 			arr[i++] = '\0';
 			i=0;
-			f1 = 1;
+			f2 = 1;
 		}
 		if(arr[i-1] == '\r'){
 			arr[i-1] = '\0';
 			i = 0;
-			f1 = 1;
+			f2 = 1;
 		}
 	}
 	VICVectAddr = 0;	
@@ -40,7 +42,7 @@ void config_vic_for_uart0(void){
 	
 	VICIntSelect = 0; 			//all irq type
 	VICVectCntl0 = 6 | (1<<5); 	// slot0 interrupt no 6
-	VICVectAddr0 = (unsigned int)uart0_handler; //slot0
+	VICVectAddr0 = (unsigned int)uart0_intrptrx_str; //slot0
 	VICIntEnable = (1<<6); 		// enable uart0 interrupt in vic peri.
 	U0IER = 3;	   				//enable uart0 interrupt in Uart0 peri.
 }
