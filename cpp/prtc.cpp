@@ -1,56 +1,39 @@
 #include<iostream>
+#include<cstring>
 using namespace std;
 
-class A{
-	int x;
-	public:
-	void set_x(int a){
-		x = a;
+class shallow{
+	char* s;
+	public: 
+
+	shallow(const char* p){
+		s = new char[strlen(p) + 1];
+		strcpy(s, p);
 	}
-	void get_x(){
-		cout<<x<<endl;
+	shallow(shallow t){
+		cout<<"Deep copy"<<endl;
+		//s = new char[strlen(t.s)+1];
+		//strcpy(s, t.s);
+		s = t.s;
 	}
-};
-class B: public A{
-	int y;
-	public:
-	void set_y(int a){
-		y = a;
+	void get_string(){
+		cout<<"string - "<<s<<endl;
 	}
-	void get_y(){
-		cout<<y<<endl;
-	}
-};
-class C: public A{
-	int z;
-	public:
-	void set_z(int a){
-		z = a;
-	}
-	void get_z(){
-		cout<<z<<endl;
-	}
-};
-class D: public A{
-	int n;
-	public:
-	void set_n(int a){
-		n = a;
-	}
-	void get_n(){
-		cout<<n<<endl;
+	void modify(){
+		s[0] = 's';
 	}
 };
 
 int main(){
-	
-	cout<<"size d= "<<sizeof(D)<<endl;
-	cout<<"size a= "<<sizeof(A)<<endl;
-	cout<<"size b= "<<sizeof(B)<<endl;
-	cout<<"size c= "<<sizeof(C)<<endl;
+	shallow s1("Vector");
+	shallow s2 = s1;
 
-	return 0;
+	s1.get_string();
+	s2.get_string();
+
+	cout<<"**************************"<<endl;
+
+	s1.modify();
+	s1.get_string();
+	s2.get_string();
 }
-
-
-
