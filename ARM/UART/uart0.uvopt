@@ -134,7 +134,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(134=-1,-1,-1,-1,0)(135=-1,-1,-1,-1,0)(107=-1,-1,-1,-1,0)(108=-1,-1,-1,-1,0)(106=-1,-1,-1,-1,0)(105=-1,-1,-1,-1,0)(80=148,185,649,588,1)(104=0,155,306,567,0)(100=319,437,892,612,1)(101=-1,-1,-1,-1,0)(113=165,50,540,477,0)(112=-1,-1,-1,-1,0)(136=-1,-1,-1,-1,0)(117=-1,-1,-1,-1,0)(118=-1,-1,-1,-1,0)(110=-1,-1,-1,-1,0)(111=423,178,939,626,1)(114=-1,-1,-1,-1,0)(119=-1,-1,-1,-1,0)(130=-1,-1,-1,-1,0)(131=-1,-1,-1,-1,0)(121=-1,-1,-1,-1,0)(122=-1,-1,-1,-1,0)(132=-1,-1,-1,-1,0)(115=-1,-1,-1,-1,0)(116=-1,-1,-1,-1,0)</Name>
+          <Name>(134=-1,-1,-1,-1,0)(135=-1,-1,-1,-1,0)(107=-1,-1,-1,-1,0)(108=-1,-1,-1,-1,0)(106=-1,-1,-1,-1,0)(105=-1,-1,-1,-1,0)(80=148,185,649,584,0)(104=0,155,306,567,0)(100=319,437,892,608,1)(101=-1,-1,-1,-1,0)(113=165,50,540,477,0)(112=-1,-1,-1,-1,0)(136=-1,-1,-1,-1,0)(117=-1,-1,-1,-1,0)(118=-1,-1,-1,-1,0)(110=-1,-1,-1,-1,0)(111=423,178,939,622,0)(114=-1,-1,-1,-1,0)(119=-1,-1,-1,-1,0)(130=-1,-1,-1,-1,0)(131=-1,-1,-1,-1,0)(121=-1,-1,-1,-1,0)(122=-1,-1,-1,-1,0)(132=-1,-1,-1,-1,0)(115=-1,-1,-1,-1,0)(116=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -194,28 +194,14 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>2</FileNumber>
+      <FileNumber>3</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>6</TopLine>
-      <CurrentLine>22</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\main.c</PathWithFileName>
-      <FilenameWithoutPath>main.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>3</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>10</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>9</CurrentLine>
+      <CurrentLine>17</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\delay.c</PathWithFileName>
       <FilenameWithoutPath>delay.c</FilenameWithoutPath>
@@ -226,10 +212,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>4</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>19</TopLine>
-      <CurrentLine>24</CurrentLine>
+      <TopLine>11</TopLine>
+      <CurrentLine>16</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\header.h</PathWithFileName>
       <FilenameWithoutPath>header.h</FilenameWithoutPath>
@@ -240,13 +226,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>47</ColumnNumber>
+      <ColumnNumber>31</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>63</TopLine>
+      <TopLine>58</TopLine>
       <CurrentLine>63</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\lcd4bitDriver.c</PathWithFileName>
-      <FilenameWithoutPath>lcd4bitDriver.c</FilenameWithoutPath>
+      <PathWithFileName>.\uart0_driver.c</PathWithFileName>
+      <FilenameWithoutPath>uart0_driver.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -254,13 +240,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>11</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>16</TopLine>
+      <CurrentLine>31</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\uart_interrupt.c</PathWithFileName>
-      <FilenameWithoutPath>uart_interrupt.c</FilenameWithoutPath>
+      <PathWithFileName>.\adc_driver.c</PathWithFileName>
+      <FilenameWithoutPath>adc_driver.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -268,118 +254,136 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>18</ColumnNumber>
+      <ColumnNumber>24</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\uart0_driver.c</PathWithFileName>
-      <FilenameWithoutPath>uart0_driver.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>8</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>22</TopLine>
-      <CurrentLine>30</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\adc_driver.c</PathWithFileName>
-      <FilenameWithoutPath>adc_driver.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>9</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>28</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>5</CurrentLine>
+      <TopLine>27</TopLine>
+      <CurrentLine>32</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main_adc.c</PathWithFileName>
       <FilenameWithoutPath>main_adc.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>10</FileNumber>
+      <FileNumber>0</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>10</ColumnNumber>
+      <ColumnNumber>20</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>19</TopLine>
-      <CurrentLine>33</CurrentLine>
+      <TopLine>72</TopLine>
+      <CurrentLine>72</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Timer_Intrr.c</PathWithFileName>
-      <FilenameWithoutPath>Timer_Intrr.c</FilenameWithoutPath>
+      <PathWithFileName>.\lcd4bitDriver.c</PathWithFileName>
+      <FilenameWithoutPath>lcd4bitDriver.c</FilenameWithoutPath>
     </File>
   </Group>
+
+  <AlienFiles>
+    <PathWithFilename>E:\V24BE5R2\V24BE5R2\ARM\UART\Timer_Intrr.c</PathWithFilename>
+    <TopLine>19</TopLine>
+    <CurrentLine>19</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\V24BE5R2\V24BE5R2\ARM\UART\uart_interrupt.c</PathWithFilename>
+    <TopLine>49</TopLine>
+    <CurrentLine>49</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
 
   <MDIGroups>
     <Orientation>1</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>4</ActiveTab>
+      <ActiveTab>3</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\uart_interrupt.c</Name>
+          <Name>E:\V24BE5R2\V24BE5R2\ARM\UART\uart_interrupt.c</Name>
           <ColumnNumber>11</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <TopLine>49</TopLine>
+          <CurrentLine>49</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\uart0_driver.c</Name>
-          <ColumnNumber>18</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <ColumnNumber>31</ColumnNumber>
+          <TopLine>58</TopLine>
+          <CurrentLine>63</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\adc_driver.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>22</TopLine>
-          <CurrentLine>30</CurrentLine>
+          <TopLine>16</TopLine>
+          <CurrentLine>31</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\main_adc.c</Name>
-          <ColumnNumber>28</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>5</CurrentLine>
+          <ColumnNumber>24</ColumnNumber>
+          <TopLine>27</TopLine>
+          <CurrentLine>32</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\main.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>6</TopLine>
-          <CurrentLine>22</CurrentLine>
+          <Name>.\header.h</Name>
+          <ColumnNumber>4</ColumnNumber>
+          <TopLine>11</TopLine>
+          <CurrentLine>16</CurrentLine>
         </Doc>
         <Doc>
-          <Name>header.h</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>19</TopLine>
-          <CurrentLine>24</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\Timer_Intrr.c</Name>
+          <Name>E:\V24BE5R2\V24BE5R2\ARM\UART\Timer_Intrr.c</Name>
           <ColumnNumber>10</ColumnNumber>
           <TopLine>19</TopLine>
-          <CurrentLine>33</CurrentLine>
+          <CurrentLine>19</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\delay.c</Name>
-          <ColumnNumber>10</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>9</CurrentLine>
+          <CurrentLine>17</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\lcd4bitDriver.c</Name>
-          <ColumnNumber>47</ColumnNumber>
-          <TopLine>63</TopLine>
-          <CurrentLine>63</CurrentLine>
+          <ColumnNumber>20</ColumnNumber>
+          <TopLine>72</TopLine>
+          <CurrentLine>72</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

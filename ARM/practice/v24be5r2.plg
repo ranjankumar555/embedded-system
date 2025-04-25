@@ -1,0 +1,117 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\v24be5r2\v24be5r2\ARM\practice\v24be5r2.uvproj
+Project File Date:  04/21/2025
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling delay.c...
+linking...
+v24be5r2.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+header.h(6): error:  #130: expected a "{"
+header.h(12): warning:  #1-D: last line of file ends without a newline
+delay.c(3): warning:  #12-D: parsing restarts here after previous syntax error
+delay.c(8): error:  #20: identifier "sec" is undefined
+delay.c(11): error:  #247: function "delay_ms" has already been defined
+compiling lcd_4bit_driver.c...
+header.h(6): error:  #130: expected a "{"
+header.h(12): warning:  #1-D: last line of file ends without a newline
+lcd_4bit_driver.c(2): warning:  #12-D: parsing restarts here after previous syntax error
+lcd_4bit_driver.c(6): error:  #20: identifier "data" is undefined
+lcd_4bit_driver.c(10): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(12): error:  #65: expected a ";"
+lcd_4bit_driver.c(13): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(21): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(23): error:  #65: expected a ";"
+lcd_4bit_driver.c(25): error:  #65: expected a ";"
+lcd_4bit_driver.c(31): error:  #20: identifier "data" is undefined
+lcd_4bit_driver.c(35): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(37): error:  #65: expected a ";"
+lcd_4bit_driver.c(38): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(46): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(48): error:  #65: expected a ";"
+lcd_4bit_driver.c(50): error:  #65: expected a ";"
+lcd_4bit_driver.c(58): warning:  #1-D: last line of file ends without a newline
+compiling lcd_8bit_driver.c...
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+header.h(6): error:  #130: expected a "{"
+header.h(12): warning:  #1-D: last line of file ends without a newline
+delay.c(3): warning:  #12-D: parsing restarts here after previous syntax error
+delay.c(8): error:  #20: identifier "sec" is undefined
+delay.c(11): error:  #247: function "delay_ms" has already been defined
+compiling lcd_4bit_driver.c...
+header.h(6): error:  #130: expected a "{"
+header.h(12): warning:  #1-D: last line of file ends without a newline
+lcd_4bit_driver.c(2): warning:  #12-D: parsing restarts here after previous syntax error
+lcd_4bit_driver.c(6): error:  #20: identifier "data" is undefined
+lcd_4bit_driver.c(10): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(12): error:  #65: expected a ";"
+lcd_4bit_driver.c(13): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(21): error:  #109: expression must have (pointer-to-) function type
+lcd_4bit_driver.c(23): error:  #65: expected a ";"
+lcd_4bit_driver.c(25): error:  #65: expected a ";"
+lcd_4bit_driver.c(31): error:  #20: identifier "data" is undefined
+lcd_4bit_driver.c(58): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+header.h(6): error:  #130: expected a "{"
+header.h(12): warning:  #1-D: last line of file ends without a newline
+delay.c(3): warning:  #12-D: parsing restarts here after previous syntax error
+delay.c(8): error:  #20: identifier "sec" is undefined
+delay.c(11): error:  #247: function "delay_ms" has already been defined
+compiling lcd_4bit_driver.c...
+header.h(6): error:  #130: expected a "{"
+header.h(12): warning:  #1-D: last line of file ends without a newline
+lcd_4bit_driver.c(2): warning:  #12-D: parsing restarts here after previous syntax error
+lcd_4bit_driver.c(6): error:  #20: identifier "data" is undefined
+lcd_4bit_driver.c(31): error:  #20: identifier "data" is undefined
+lcd_4bit_driver.c(58): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+header.h(12): warning:  #1-D: last line of file ends without a newline
+compiling lcd_4bit_driver.c...
+header.h(12): warning:  #1-D: last line of file ends without a newline
+linking...
+lcd4bit.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+compiling lcd_4bit_driver.c...
+linking...
+lcd4bit.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+linking...
+lcd4bit.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+compiling lcd_4bit_driver.c...
+linking...
+lcd4bit.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+linking...
+lcd4bit.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+assembling Startup.s...
+compiling delay.c...
+compiling lcd_4bit_driver.c...
+compiling lcd_8bit_driver.c...
+compiling main.c...
+main.c(7): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1308 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"lcd4bit.axf" - 0 Error(s), 1 Warning(s).

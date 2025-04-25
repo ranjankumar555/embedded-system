@@ -29,7 +29,35 @@ class String{
 	void getstr(void);
 	
 
+	/*** operator overloaded member function ***/
+	String operator =(String& s1, String& s2);
+	String operator +(String& s1, String& S2);
+	char& operator [](int i);
+	bool operator >(String s1, String s2);
+	bool operator <(String s1, String s2);
+	bool operator >=(String s1, String s2);
+	bool operator <=(String s1, String s2);
+	bool operator !=(String s1, String s2);
+	bool operator ==(String s1, String s2);
+	friend ostream& operator <<(ostream& out, String& obj);
+	friend istream& operator >>(istream& in, String& obj);
+
+	/*** friend function ***/
+	friend unsigned int my_strlen(const char* s);
+	friend void my_strcpy(char* dest, const char* src);
+	friend void my_strncpy(char* dest, const char* src, unsigned const int len);
+	friend int my_strcmp(const char* s1, const char* s2);
+	friend char* my_strcat(char* s1, const char* s2);
+	friend char* my_strncat(char* s1, const char* s2, unsigned const int len);
+	friend char* my_strrev1(char* str);
+	friend char* my_strrev2(char* startAddr, char* endAddr);
+	friend char* my_strupper(char* str);
+	friend char* my_strlower(char* str);
+	friend char* my_strchr(char* str, char ch);
+	friend char* my_strrchr(char* str, char ch);
+	friend char* my_strstr(const char* mainstr, const char* substr);
 };
+
 void String :: getstr(){
 		if(str==nullptr) return;
 		cout<<str<<endl;

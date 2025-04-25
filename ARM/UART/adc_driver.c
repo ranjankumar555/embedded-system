@@ -27,3 +27,5 @@ unsigned int adc_read(unsigned char ch_num){
 	return result;
 
 }
+
+

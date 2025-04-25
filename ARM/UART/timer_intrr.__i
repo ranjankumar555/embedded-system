@@ -1,1 +1,0 @@
--c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "timer_intrr.o" --omf_browse "timer_intrr.crf" --depend "timer_intrr.d" "Timer_Intrr.c"

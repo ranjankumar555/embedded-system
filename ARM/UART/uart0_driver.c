@@ -1,5 +1,5 @@
 #include<lpc21xx.h>
-
+#include "header.h"
 #define THRE ((U0LSR >>5) & 1) // txFlag
 #define RDR (U0LSR & 1)		   // rxFlag
 
@@ -58,6 +58,13 @@ void int_str(char * str, int num){
 		 rev /= 10;
 	}
 	str[i] = '\0';
+}
+
+void uart0_tx_float(float num){
+	char arr[10];
+	sprintf(arr, "%.1f", num);
+	uart0_tx_str(arr);
+	//lcd_str(arr);
 }
 
 void uart0_init(unsigned int baudrate){ //baudrate setting

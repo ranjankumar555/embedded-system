@@ -392,11 +392,6 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\delay.c</FilePath>
@@ -405,16 +400,6 @@
               <FileName>header.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\header.h</FilePath>
-            </File>
-            <File>
-              <FileName>lcd4bitDriver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\lcd4bitDriver.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart_interrupt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\uart_interrupt.c</FilePath>
             </File>
             <File>
               <FileName>uart0_driver.c</FileName>
@@ -432,9 +417,9 @@
               <FilePath>.\main_adc.c</FilePath>
             </File>
             <File>
-              <FileName>Timer_Intrr.c</FileName>
+              <FileName>lcd4bitDriver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Timer_Intrr.c</FilePath>
+              <FilePath>.\lcd4bitDriver.c</FilePath>
             </File>
           </Files>
         </Group>

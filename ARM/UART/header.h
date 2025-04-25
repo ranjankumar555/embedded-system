@@ -1,6 +1,7 @@
 #ifndef _HEADER_H
 #define _HEADER_H
 #include<lpc21xx.h>
+#include<stdio.h>
 extern void delay_ms(unsigned char ms);
 extern void delay_ms(unsigned char sec);
 extern void config_vic_for_timer1(void);
@@ -12,11 +13,12 @@ extern void lcd_str(char* p);
 extern void lcd_data(unsigned char data);
 extern void lcd_cmd(unsigned char cmd);
 extern void lcd_init(void);
-
+extern void lcd_str_float(float num);
 extern void uart0_tx(unsigned char data);
 extern unsigned int uart0_rx(void);
 extern void uart0_rx_str(char *arr, unsigned int len);
 extern void uart0_tx_str(char* str);
+extern void uart0_tx_float(float num);
 extern void uart0_init(unsigned int baudrate);
 
 extern void adc_init(void);
