@@ -1,1 +1,1 @@
-main_adc.o: main_adc.c
+.\main_adc.o: main_adc.c

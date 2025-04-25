@@ -34,7 +34,3 @@ void timer1_config(){
 	T0MCR=3;
 	T0TCR=1;
 }
-
-
-
-

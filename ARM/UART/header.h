@@ -27,5 +27,7 @@ extern void config_vic_for_eint0(void);
 
 extern int str_int(const char* str);
 extern void int_str(char * str, int num);
+extern void my_strcpy(char *d, char* s);
+extern int my_strcmp(const char* str1, const char* str2);
 
 #endif

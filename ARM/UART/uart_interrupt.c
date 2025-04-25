@@ -6,6 +6,7 @@
 #define THRE ((U0LSR >>5) & 1)
 extern unsigned char temp, flag, f2;
 extern char arr[10];
+extern int i;
 void uart0_handler(void) __irq{
 	int v = U0IIR;
 	v &= 0x0E;
@@ -17,7 +18,7 @@ void uart0_handler(void) __irq{
 	VICVectAddr = 0;					
 }
 void uart0_intrptrx_str(void) __irq{
-	static int i;
+	
 	int v = U0IIR;
 	v = v&0X0E;
 	if(v == 4){
