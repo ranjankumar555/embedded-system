@@ -1,4 +1,0 @@
---cpu ARM7TDMI "startup.o" "main.o" "delay.o" "ledblink.o" "lcd_8bit_driver.o" --strict --scatter "lcd8.sct" 
---summary_stderr --info summarysizes --map --xref --callgraph --symbols 
---info sizes --info totals --info unused --info veneers 
- --list ".\lcd8.map" -o "lcd8.axf"

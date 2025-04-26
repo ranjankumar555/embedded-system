@@ -31,7 +31,6 @@ void lcd_data(unsigned char data){
 void lcd_cmd(unsigned char cmd){
   
   unsigned int temp;
-
   /* higher Nibble */
   IOCLR1 = 0xFE << 16;
   temp = (cmd & 0XF0)<<16;
@@ -71,7 +70,11 @@ void lcd_str(char* p){
 		p++;
 	}
 }
-
+void lcd_str_float(float num){
+	char arr[10];
+	sprintf(arr, "%.1f", num);
+	lcd_str(arr);
+}
 void lcd_cgram(void){
 	int i;
 	unsigned char arr[8] = {0X17, 0X14, 0X14, 0X1F, 0X05, 0X05, 0X1D, 0X00};

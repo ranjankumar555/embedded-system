@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --cpu ARM7TDMI
 ".\startup.o"
 ".\main.o"
@@ -13,3 +14,9 @@
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\uart0.map" -o .\uart0.axf
+=======
+--cpu ARM7TDMI "startup.o" "delay.o" "uart0_driver.o" "adc_driver.o" "main_adc.o" "lcd4bitdriver.o" --strict --scatter "uart0.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\uart0.map" -o "uart0.axf"
+>>>>>>> a6cc5b9d36e5843ba0b1d12cee048988a61883bf

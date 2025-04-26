@@ -1,0 +1,29 @@
+Feature of string class
+--------------------------------
+1. string s1 = "Ranjan Kumar";
+	string s1("Ranjan Kumar");
+2. cout<<s1<<endl;
+3 s[0] = 'y';
+4. string s2 = "Ranjan Kumar";
+5. f(s1 == s2);
+6. if(s1!=s2);
+7. s1>s2, s1<s2, 
+
+##Features
+
+- Dynamic memory management
+- Constructor overloading
+- Copy constructor & assignment operator
+- Move constructor & assignment operator
+- Destructor for clean-up
+- String concatenation (`+` / `+=`)
+- Comparison operators (`==`, `!=`, `<`, `>`)
+- Subscript operator (`[]`)
+- Length / size support
+- Custom `print()` or stream operator (`<<`) support
+- Deep copy semantics
+
+---
+# Member function
+-------------------------------
+    

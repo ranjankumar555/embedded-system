@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'v24be5r2.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"delay.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI "startup.o" "delay.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x40000000 --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\v24be5r2.map" -o "v24be5r2.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'v24be5r2.axf'
+### ADS-LD Command File: 'v24be5r2.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'v24be5r2.lnp', Handle=0x000003B4
+### Writing '.lnp' file
+### ADS-LD Command file 'v24be5r2.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 1 errors
+### Updating obj list
+### LDADS_file() completed.
