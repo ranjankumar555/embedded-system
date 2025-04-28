@@ -6,15 +6,16 @@
 ### List of Objects: adding '"lcd_4bit_driver.o"'
 ### List of Objects: adding '"main.o"'
 ### List of Objects: adding '"uart0driver.o"'
+### List of Objects: adding '"uart0_intrpt.o"'
 ### ADS-LD Command completed:
---cpu ARM7TDMI "startup.o" "delay.o" "lcd_4bit_driver.o" "main.o" "uart0driver.o" --strict --scatter "uart0.sct" 
+--cpu ARM7TDMI "startup.o" "delay.o" "lcd_4bit_driver.o" "main.o" "uart0driver.o" "uart0_intrpt.o" --strict --scatter "uart0.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\uart0.map" -o "uart0.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'uart0.axf'
 ### ADS-LD Command File: 'uart0.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'uart0.lnp', Handle=0x00000484
+### Creating CmdFile 'uart0.lnp', Handle=0x000001C4
 ### Writing '.lnp' file
 ### ADS-LD Command file 'uart0.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

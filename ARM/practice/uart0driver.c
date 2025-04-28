@@ -104,7 +104,7 @@ int uart0_rx_integer()
 		i=1;
 	else
 		i=0;
-	for(i,num1=0;s[i];i++)
+	for(num1=0;s[i];i++)
 	{
 		num1=num1*10+(s[i]-48);
 	}
@@ -122,17 +122,17 @@ float uart0_rx_float()
 		i=1;
 	else
 		i=0;
-	for(i,num1=0;s[i]&&s[i]!='.';i++)
+	for(num1=0;s[i]&&s[i]!='.';i++)
 	{
 		num1=num1*10+(s[i]-48);
 	}
 	i++;
-	for(i;s[i];i++)
+	for(;s[i];i++)
 	{
 		num2=num2*10+(s[i]-48);
 	}
 	num3=num2;
-	for(num2;num2;num2=num2/10)
+	for(;num2;num2=num2/10)
 		l++;
 	for(i=0;i<l;i++)
 		num3=num3/10;

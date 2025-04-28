@@ -19,10 +19,11 @@ extern void uart0_rx_string(char *p,unsigned int len);
 extern void uart0_tx_integer(int num);
 extern void uart0_tx_float(float f);
 extern void uart0_tx_hex(int num);
-extern int uart0_rx_integer();
-extern float uart0_rx_float();
+extern int uart0_rx_integer(void);
+extern float uart0_rx_float(void);
 
 extern void config_vic_for_uart0(void);
 extern void ext_uart0_intrpt(void);
-extern 
+extern void config_vic_for_eint0(void);
+extern unsigned char temp; 
 #endif

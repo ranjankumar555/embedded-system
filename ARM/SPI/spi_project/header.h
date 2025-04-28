@@ -1,0 +1,33 @@
+#include<lpc21xx.h>
+#ifndef _HEADER_H
+#define _HEADER_H
+
+extern void delay_ms(unsigned int ms);
+extern void delay_ms(unsigned int ms);
+
+extern void lcd_data(unsigned char data);  // 8bit and 4bit function are same...
+extern void lcd_cmd(unsigned char cmd);
+extern void lcd_init(void);
+extern void lcd_str(char *p);
+extern void lcd_cgram(void);
+
+extern void uart0_init(unsigned int baud);
+extern void uart0_tx_data(unsigned char data);
+extern unsigned char uart0_rx_data(void);
+extern void uart0_tx_string(char *p);
+extern void uart0_rx_string(char *p,unsigned int len);
+extern void uart0_tx_integer(int num);
+extern void uart0_tx_float(float f);
+extern void uart0_tx_hex(int num);
+extern int uart0_rx_integer(void);
+extern float uart0_rx_float(void);
+
+extern void config_vic_for_uart0(void);
+extern void ext_uart0_intrpt(void);
+extern void config_vic_for_eint0(void);
+extern unsigned char temp;
+
+extern void spi0_init(void);
+extern unsigned char spi0(unsigned char data); 
+extern unsigned int mcp3204_read(unsigned char ch_num);
+#endif

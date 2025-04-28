@@ -72,11 +72,18 @@ void lcd_str(unsigned char* p){
 	}
 }
 
-void lcd_cgram(void){
-	int i;
-	unsigned char arr[8] = {0X17, 0X14, 0X14, 0X1F, 0X05, 0X05, 0X1D, 0X00};
-	lcd_cmd(0X48); //starting address of page1
-	for(i = 0; i<8; i++){
-		lcd_data(arr[i]);
-	}
+void lcd_cgram(void){
+
+	int i;
+
+	unsigned char arr[8] = {0X17, 0X14, 0X14, 0X1F, 0X05, 0X05, 0X1D, 0X00};
+
+	lcd_cmd(0X48); //starting address of page1
+
+	for(i = 0; i<8; i++){
+
+		lcd_data(arr[i]);
+
+	}
+
 }

@@ -1,0 +1,25 @@
+*** Creating Trace Output File 'spi_mcp3204_adc.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '"uart0driver.o"'
+### List of Objects: adding '"delay.o"'
+### List of Objects: adding '"lcd_4bit_driver.o"'
+### List of Objects: adding '"spi0_driver.o"'
+### List of Objects: adding '"mcp3204_driver.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI "startup.o" "main.o" "uart0driver.o" "delay.o" "lcd_4bit_driver.o" "spi0_driver.o" "mcp3204_driver.o" --strict --scatter "spi_mcp3204_adc.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\spi_mcp3204_adc.map" -o "spi_mcp3204_adc.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'spi_mcp3204_adc.axf'
+### ADS-LD Command File: 'spi_mcp3204_adc.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'spi_mcp3204_adc.lnp', Handle=0x000004F4
+### Writing '.lnp' file
+### ADS-LD Command file 'spi_mcp3204_adc.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

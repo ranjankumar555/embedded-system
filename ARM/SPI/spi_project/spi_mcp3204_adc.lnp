@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "main.o" "uart0driver.o" "delay.o" "lcd_4bit_driver.o" "spi0_driver.o" "mcp3204_driver.o" --strict --scatter "spi_mcp3204_adc.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\spi_mcp3204_adc.map" -o "spi_mcp3204_adc.axf"
