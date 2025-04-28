@@ -23,10 +23,12 @@ class String{
 	
 	/*** member function ***/
 	void getstr(void);
-	
+	char* begin(void);
+	char* end(void);	
 
 	/*** operator overloaded member function ***/
 	String& operator =(String& s2);
+	String& operator =(char* ptr);
 	String& operator +(String& S2);
 	char& operator [](int i);
 	bool operator >(String s2);
@@ -35,24 +37,26 @@ class String{
 	bool operator <=(String s2);
 	bool operator !=(String s2);
 	bool operator ==(String s2);
+
 	friend ostream& operator <<(ostream& out, String& obj);
 	friend istream& operator >>(istream& in, String& obj);
 
 	/*** friend function ***/
-	friend unsigned int my_strlen(const char* s);
-	friend void my_strcpy(char* dest, const char* src);
-	friend void my_strncpy(char* dest, const char* src, unsigned const int len);
-	friend int my_strcmp(const char* s1, const char* s2);
-	friend char* my_strcat(char* s1, const char* s2);
-	friend char* my_strncat(char* s1, const char* s2, unsigned const int len);
-	friend char* my_strrev1(char* str);
-	friend char* my_strrev2(char* startAddr, char* endAddr);
-	friend char* my_strupper(char* str);
-	friend char* my_strlower(char* str);
-	friend char* my_strchr(char* str, char ch);
-	friend char* my_strrchr(char* str, char ch);
-	friend char* my_strstr(const char* mainstr, const char* substr);
+	friend unsigned int my_strlen(String& s);
+	friend void my_strcpy(String& s1, String& s2);
+	friend void my_strncpy(String& dest, const String& src, unsigned const int len);
+	friend int my_strcmp(const String& s1, const String& s2);
+	friend String& my_strcat(String& s1, const String& s2);
+	friend String& my_strncat(String& s1, const String& s2, unsigned const int len);
+	friend String& my_strrev1(String& str);
+	friend void my_strrev2(String& startAddr, String& endAddr);
+	friend String& my_strupper(String& str);
+	friend String& my_strlower(String& str);
+	friend bool my_strchr(String& str, char ch);
+	friend bool my_strrchr(String& str, char ch);
+	friend bool my_strstr(const String mainstr, const String& substr);
 };
+
 /*** default constructor; string s1; ***/
 String :: String():str(nullptr), length(0){};
 
@@ -69,9 +73,20 @@ String :: String(String& t){
 	str = new char[length + 1];
 	mystrcpy(str, t.str, length);
 }
+
+/*** member function ***/
 void String :: getstr(){
 	if(str==nullptr) return;
 	cout<<str<<endl;
+}
+
+char* String :: begin(void){
+	return str;
+}
+
+char* String :: end(void){
+	length = strlen(str);
+	return str+length-1;
 }
 
 /*** operator overloaded member function ***/
@@ -85,6 +100,9 @@ String& :: String operator =(String& s2){    // s1 = s2;
 	mystrcpy(str, s2.str, s2_len);
 	return *this;
 }
+String& operator =(char* ptr){
+
+}
 String& :: String operator +(String& S2){
 	int len_s1 = mystrlen(str);
 	int len_s2 = mystrlen(s2.str);
@@ -95,7 +113,7 @@ char& String :: operator [](int i){
 	return str[i];
 }
 bool String :: operator >(String s2){
-
+	
 }
 bool String :: operator <(String s2){
 
@@ -133,40 +151,90 @@ istream& operator >>(istream& in, String& obj){
 }
 
 /*** friend function ***/
-unsigned int my_strlen(const char* s){
+unsigned int my_strlen(String& obj){
+	int i;
+	while(*(obj.str+i++));
+	return i;	
+}
+void my_strncpy(String& dest, const String& src, unsigned const int len){
+	
+}
+int my_strcmp(const String& s1, const string& s2){
+	
+}
+char* my_strcat(String& s1, const String& s2){
 
 }
-void my_strncpy(char* dest, const char* src, unsigned const int len){
+char* my_strncat(String& s1, const String& s2, unsigned const int len){
 
 }
-int my_strcmp(const char* s1, const char* s2){
-
+String& my_strrev1(String& obj){
+	int len, i, j;
+	char temp;
+	j = mystrlen(obj.str)-1;
+	
+	for(i = 0; i<j; i++ j--){
+		temp = *(str+i);
+		*(str+i) = *(str+j);
+		*(str+j) = temp;
+	}
+	return obj;
 }
-char* my_strcat(char* s1, const char* s2){
-
+void strrev2(char* startAddr, char* endAddr){ // use own iterator concept; obj.begin(), obj.end()
+        
+    char temp;
+    while(startAddr<endAddr){
+        temp = *startAddr;
+        *startAddr = *endAddr;
+        *endAddr = temp;
+        
+        startAddr++;
+        endAddr--;
+    }
 }
-char* my_strncat(char* s1, const char* s2, unsigned const int len){
 
-}
-char* my_strrev1(char* str){
+String& my_strupper(String& obj){
+	int i;
+	while(*(obj.str+i)){
+		if(*(obj.str+i) >='a' && *(obj.str+i) <= 'z'){
+			*(obj.str+i) ^= 32;
 
+		}
+		i++;
+	}
+	return obj;
 }
-char* my_strrev2(char* startAddr, char* endAddr){
-
+String& my_strlower(String& obj){
+	int i;
+	while(*(obj.str+i)){
+		if(*(obj.str+i) >='A' && *(obj.str+i) <= 'Z'){
+			*(obj.str+i) ^= 32;
+		}
+		i++;
+	}
+	return obj;
 }
-char* my_strupper(char* str){
-
+bool my_strchr(String& obj, char ch){
+	int i=0;
+	while(*(obj.str + i)){
+		if(*(obj.str+i) == ch){
+			return 1;
+		}
+		i++;
+	}
+	return 0;
 }
-char* my_strlower(char* str){
-
+bool my_strrchr(String& obj, char ch){
+	int len = mystrlen(obj.str)-1;
+	while(len){
+		if(*(obj.str+len) == ch){
+			return 1;
+		}
+		len--;
+	}
+	return 0;
 }
-char* my_strchr(char* str, char ch){
-
-}
-char* my_strrchr(char* str, char ch){
-
-}
-char* my_strstr(const char* mainstr, const char* substr){
+bool my_strstr(const String& mainstr, const String& substr){
 
 
 }
