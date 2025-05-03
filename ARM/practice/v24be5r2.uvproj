@@ -44,7 +44,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>uart0</OutputName>
+          <OutputName>demo123</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -407,11 +407,6 @@
               <FilePath>.\header.h</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
               <FileName>uart0driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\uart0driver.c</FilePath>
@@ -420,6 +415,11 @@
               <FileName>uart0_intrpt.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\uart0_intrpt.c</FilePath>
+            </File>
+            <File>
+              <FileName>m1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\m1.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -69,7 +69,8 @@ String :: String(const char* p){
 
 /*** deep copy constructor; s2 = s1; ***/
 String :: String(String& t){
-	length = mystrlen(t.str);
+	length = t.length;
+	//length = mystrlen(t.str);
 	str = new char[length + 1];
 	mystrcpy(str, t.str, length);
 }
@@ -90,45 +91,103 @@ char* String :: end(void){
 }
 
 /*** operator overloaded member function ***/
-String& :: String operator =(String& s2){    // s1 = s2;
-	int len_s1 = mystrlen(str);
-	int len_s2 = mystrlen(s2.str);
-	if(len_s2 > len_s1){
-		delete []str;
-		str = new char[s2_len+1];
-	}
-	mystrcpy(str, s2.str, s2_len);
+String& :: String operator =(String& s1){    // s2 = s1;
+	length = s1.length;
+	delete str;
+	str = new char[length+1];
+	
+	mystrcpy(str, s2.str, length);
 	return *this;
 }
-String& operator =(char* ptr){
-
+String& :: String operator = (char* ptr){
+	length = mystrlen(ptr);
+	delete str;
+	str = new char[length+1];
+	mystrcpy(str, ptr, length);
+	
+	return *this;
 }
-String& :: String operator +(String& S2){
-	int len_s1 = mystrlen(str);
-	int len_s2 = mystrlen(s2.str);
-
+String& :: String operator +(String& s1, String& s2){
+	length = s1.length + s2.length;
+	delete str;
+	str = new char[length + 1];
+	mystrcpy(str, s1.str, length);
+	int i;
+	for(i=0; s2.str[i]; i++){
+		str[++length] = s2.str[i]; // overwrite '\0' with first character of s2.str
+	}
+	
+	return *this;
 
 }
 char& String :: operator [](int i){
 	return str[i];
 }
 bool String :: operator >(String s2){
-	
+	int i = 0;
+	while(*(str+i) && *(s2.str+i)){
+		if(*(str + i) != *(s2.str + i)){
+			return *(str+i) > *(s2.str+i);
+		}
+		i++;
+	}
+	return *(str+i) > *(s2.str+i);	
 }
 bool String :: operator <(String s2){
+	int i = 0;
+	while(*(str+i) && *(s2.str+i)){
+		if(*(str + i) != *(s2.str + i)){
+			return *(str+i) < *(s2.str+i);
+		}
+		i++;
+	}
+	return *(str+i) < *(s2.str+i);	
 
 }
 bool String :: operator >=(String s2){
+	int i = 0;
+	while(*(str+i) && *(s2.str+i)){
+		if(*(str + i) != *(s2.str + i)){
+			return *(str+i) >= *(s2.str+i);
+		}
+		i++;
+	}
+	return *(str+i) >= *(s2.str+i);	
 
 }
 bool String :: operator <=(String s2){
+	int i = 0;
+	while(*(str+i) && *(s2.str+i)){
+		if(*(str + i) != *(s2.str + i)){
+			return *(str+i) <= *(s2.str+i);
+		}
+		i++;
+	}
+	return *(str+i) <= *(s2.str+i);	
 
 }
-bool String :: operator !=(String s2){
+bool String :: operator != (String s2){
+	int i = 0;
+	while(*(str+i) && *(s2.str+i)){
+		if(*(str + i) != *(s2.str + i)){
+			return *(str+i) != *(s2.str+i);
+		}
+		i++;
+	}
+	return *(str+i) != *(s2.str+i);	
 
 }
 bool String :: operator ==(String s2){
 	int i = 0;
+	while(*(str+i) && *(s2.str+i)){
+		if(*(str + i) != *(s2.str + i)){
+			return *(str+i) == *(s2.str+i);
+		}
+		i++;
+	}
+	return *(str+i) == *(s2.str+i);	
+	
+	/*int i = 0;
 	while(*(str+i)){
 		if(*(str+i) != *(s2.str +i)){ // s2.str; might unauthorize memory access after '\0'
 			return 0;
@@ -137,7 +196,7 @@ bool String :: operator ==(String s2){
 	}
 	if(*(str+i) == '\0' && *(s2.str + i) == '\0')
 		return 1;
-	return 0;
+	return 0;*/
 }
 
 /*** overloaded operator friend function ***/
@@ -156,17 +215,63 @@ unsigned int my_strlen(String& obj){
 	while(*(obj.str+i++));
 	return i;	
 }
+void my_strcpy(String& s1, String& s2){
+	int i = 0;
+	while(*(s1.str+i)){
+		*(s2.str+i) = *(s1.str+i);
+		i++;
+	}
+	*(s1.str+i) = '/0';
+
+}
 void my_strncpy(String& dest, const String& src, unsigned const int len){
-	
+	int i = 0;
+	// fix buffer issue
+	while(i<len && *(src.str+i)){
+		*(dest.str + i) = *(src.str + i);
+		i++;
+	}	
 }
 int my_strcmp(const String& s1, const string& s2){
-	
+	int i=0;
+	while(*(s1.str + i){
+		if(*(s1.str + i) != *(s2.str+i){
+			return *(s1.str+i) - *(s2.str+i);
+		}
+		i++;
+	}
+	return *(s1.str+i) - *(s2.str+i);
 }
 char* my_strcat(String& s1, const String& s2){
+	int i=0, j=0;
 
+	// fix buffer issue
+
+	while(*(s1.str + i)){
+		i++;
+	}
+	
+	while(*(s2.str+j)){
+		*(s1.str+i) = *(s2.str+j);
+		i++;
+		j++;
+	}
+	*(s1.str+i) = '\0';
 }
 char* my_strncat(String& s1, const String& s2, unsigned const int len){
+	int i=0, j=0;
 
+	// fix buffer issue
+	while(*(s1.str + i)){
+		i++;
+	}
+	
+	while(*(s2.str+j) && j<len){
+		*(s1.str+i) = *(s2.str+j);
+		i++;
+		j++;
+	}
+	*(s1.str+i) = '\0';
 }
 String& my_strrev1(String& obj){
 	int len, i, j;
@@ -235,8 +340,27 @@ bool my_strrchr(String& obj, char ch){
 	return 0;
 }
 bool my_strstr(const String& mainstr, const String& substr){
+        int i = 0, j = 0;
+        while(*(mainstr.str+i)){
+                if(*(mainstr.str+i) == substr.str[0]){
 
+                        while(*(substr.str+j)){
 
+                                if(*(mainstr.str+i)!=*(substr.str+j))
+                                {
+                                        j=0;
+                                        break;
+                                }
+                                i++;
+                                j++;
+                        }
+                        if(*(substr.str+j) == '\0'){
+                                return 1;
+                        }
+                }
+                i++;
+        }
+        return 0;
 }
 
 /*** main function ***/

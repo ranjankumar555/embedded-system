@@ -44,7 +44,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>uart0</OutputName>
+          <OutputName>demo123</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -415,6 +415,11 @@
               <FileName>uart0driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\uart0driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart0_intrpt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart0_intrpt.c</FilePath>
             </File>
           </Files>
         </Group>
