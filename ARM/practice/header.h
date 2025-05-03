@@ -1,6 +1,14 @@
 #include<lpc21xx.h>
 #ifndef _HEADER_H
 #define _HEADER_H
+#define LED1 (1<<17)
+#define LED2 (1<<18)
+#define LED3 (1<<19)
+#define ALL_LED (7<<17);
+#define sw ((IOPIN0>>14)&1)
+#define sw1 ((IOPIN0>>14)&1)
+#define sw2 ((IOPIN0>>15)&1)
+#define sw3 ((IOPIN0>>16)&1)
 
 extern void delay_ms(unsigned int ms);
 extern void delay_ms(unsigned int ms);
@@ -22,8 +30,6 @@ extern void uart0_tx_hex(int num);
 extern int uart0_rx_integer(void);
 extern float uart0_rx_float(void);
 
-extern void config_vic_for_uart0(void);
-extern void ext_uart0_intrpt(void);
-extern void config_vic_for_eint0(void);
+extern void config_vic_for_intrpt123(void);
 extern unsigned char temp; 
 #endif

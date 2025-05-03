@@ -20,7 +20,7 @@ void timer1_handler() __irq
 }
 void config_vic_for_timer1(void){
 	//PINSEL0 |= (1<<25);
-	PINSEL0 |= (3<<12); 
+	PINSEL0 |= (3<<12); //match0
 	VICIntSelect=0;
 	VICVectCntl4=4|(1<<5);
 	VICVectAddr4=(unsigned int)timer1_handler;
@@ -31,6 +31,6 @@ void timer1_config(){
 	T0PR=15000000-1;
 	T0TC=0;
 	T0MR0=10;
-	T0MCR=3;
+	T0MCR=3;.
 	T0TCR=1;
 }

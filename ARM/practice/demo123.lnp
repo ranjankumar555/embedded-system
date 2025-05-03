@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "delay.o" "lcd_4bit_driver.o" "uart0driver.o" "uart0_intrpt.o" "m1.o" --strict --scatter "demo123.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\demo123.map" -o "demo123.axf"
