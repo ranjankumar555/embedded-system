@@ -69,7 +69,8 @@ String :: String(const char* p){
 
 /*** deep copy constructor; s2 = s1; ***/
 String :: String(String& t){
-	length = mystrlen(t.str);
+	length = t.length;
+	//length = mystrlen(t.str);
 	str = new char[length + 1];
 	mystrcpy(str, t.str, length);
 }
@@ -90,23 +91,33 @@ char* String :: end(void){
 }
 
 /*** operator overloaded member function ***/
-String& :: String operator =(String& s2){    // s1 = s2;
-	int len_s1 = mystrlen(str);
-	int len_s2 = mystrlen(s2.str);
-	if(len_s2 > len_s1){
-		delete []str;
-		str = new char[s2_len+1];
-	}
-	mystrcpy(str, s2.str, s2_len);
+String& :: String operator =(String& s1){    // s2 = s1;
+	length = s1.length;
+	delete str;
+	str = new char[length+1];
+	
+	mystrcpy(str, s2.str, length);
 	return *this;
 }
-String& operator =(char* ptr){
-
+String& :: String operator = (char* ptr){
+	length = mystrlen(ptr);
+	delete str;
+	str = new char[length+1];
+	mystrcpy(str, ptr, length);
+	
+	return *this;
 }
-String& :: String operator +(String& S2){
-	int len_s1 = mystrlen(str);
-	int len_s2 = mystrlen(s2.str);
-
+String& :: String operator +(String& s1, String& s2){
+	length = s1.length + s2.length;
+	delete str;
+	str = new char[length + 1];
+	mystrcpy(str, s1.str, length);
+	int i;
+	for(i=0; s2.str[i]; i++){
+		str[++length] = s2.str[i]; // overwrite '\0' with first character of s2.str
+	}
+	
+	return *this;
 
 }
 char& String :: operator [](int i){
@@ -155,7 +166,7 @@ bool String :: operator <=(String s2){
 	return *(str+i) <= *(s2.str+i);	
 
 }
-bool String :: operator !=(String s2){
+bool String :: operator != (String s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
