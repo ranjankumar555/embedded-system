@@ -1,29 +1,79 @@
-Feature of string class
---------------------------------
-1. string s1 = "Ranjan Kumar";
-	string s1("Ranjan Kumar");
-2. cout<<s1<<endl;
-3 s[0] = 'y';
-4. string s2 = "Ranjan Kumar";
-5. f(s1 == s2);
-6. if(s1!=s2);
-7. s1>s2, s1<s2, 
+## Feature of String class
+------------------------------------------------------
+1. String s1;
+2. String s1("Ranjan Kumar");
+3. String s1 = "Ranjan Kumar";
+4. String s2 = "Ranjan Kumar";
+5. s[0] = 'y'; 
+6. 
+7. 
+8. Comparison operators (==, !=, <, <=, >, >=) 
+9. Supports all kinds of strings concatenation (String s = "Hello" + s2 + " Again" + '!';)
+10. Support iterator concepts(v.begin(), v.end());
+11. Support stream operator (<<) // cout<<s1<<endl;
+12. Length support
+13. Dynamic memory management
+14. Move constructor & move assignment operator (used when returning, returning require transferring the ownership, rather than copy)
 
-##Features
 
-- Dynamic memory management
-- Constructor overloading
-- Copy constructor & assignment operator
-- Move constructor & assignment operator
-- Destructor for clean-up
-- String concatenation (`+` / `+=`)
-- Comparison operators (`==`, `!=`, `<`, `>`)
-- Subscript operator (`[]`)
-- Length / size support
-- Custom `print()` or stream operator (`<<`) support
-- Deep copy semantics
+## Member function
+---------------------------------------------------------
+String();
+String(const char* p);
+String(String& t);
+String(String&& other);  // Move constructor
+void getstr(void);
+int len(void);
+char* begin(void);
+char* end(void);
 
----
-# Member function
--------------------------------
-    
+/*** operator overloaded member function ***/
+String& operator =(String& s2);
+String& operator =(const char* ptr);
+String& operator=(String&& other); // Move assignment(=) operator
+String operator +(String&);
+String& operator +=(String&);
+char& operator [](int i);
+bool operator >(String s2);
+bool operator <(String s2);
+bool operator >=(String s2);
+bool operator <=(String s2);
+bool operator !=(String s2);
+bool operator ==(String s2);
+
+
+##Friend function
+-----------------------------------------------------------
+friend ostream& operator <<(ostream& out, String& obj);
+friend istream& operator >>(istream& in, String& obj);
+
+friend unsigned int my_strlen(String& s);
+friend void my_strcpy(String& s1, String& s2);
+friend void my_strncpy(String& dest, const String& src, unsigned const int len);
+friend int my_strcmp(const String& s1, const String& s2);
+friend String& my_strcat(String& s1, const String& s2);
+friend String& my_strncat(String& s1, const String& s2, unsigned const int len);
+friend String& my_strrev1(String& str);
+friend void my_strrev2(String& startAddr, String& endAddr);
+friend String& my_strupper(String& str);
+friend String& my_strlower(String& str);
+friend bool my_strchr(String& str, char ch);
+friend bool my_strrchr(String& str, char ch);
+friend bool my_strstr(const String mainstr, const String& substr); 
+
+
+## More implementation detail [String Concatenation]
+----------------------------------------------------------------------------  
+| Syntax              | Function Signature                                  |
+| ------------------- | --------------------------------------------------- |
+| s1 + s2             | String operator+(const String&) const               |
+| s1 += s2            | String& operator+=(const String&)                   |
+| s1 + "abc"          | String operator+(const char*) const                 |
+| "abc" + s1          | friend String operator+(const char*, const String&) |
+| s1 += "abc"         | String& operator+=(const char*)                     |
+| s1 + 'a'            | String operator+(char) const                        |
+| s1 += 'a'           | String& operator+=(char)                            |
+| s1.append(s2)       | String& append(const String&)                       |
+| s1.append("abc")    | String& append(const char*)                         |
+| s1.append(3, '!')   | String& append(int, char)                           |
+----------------------------------------------------------------------------
