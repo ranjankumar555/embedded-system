@@ -12,24 +12,24 @@ class String{
 	unsigned int length;
 	
 	public:
- 	/*** default constructor; string s1; ***/
-	String();
-	
-	/*** parameterised constructor; string s2("Ranjan") ***/
-	String(const char* p);
-	
-	/*** deep copy constructor; s2 = s1; ***/
-	String(String& t);
+ 	/*** Constructor ***/
+	String();		// default
+	String(const char* p);	// parameterised
+	String(String&& other); // move 
+	String(String& t);	// deep copy
 	
 	/*** member function ***/
 	void getstr(void);
+	int len(void);
 	char* begin(void);
 	char* end(void);	
 
 	/*** operator overloaded member function ***/
-	String& operator =(String& s2);
-	String& operator =(char* ptr);
-	String& operator +(String& S2);
+	String& operator=(String& s2);
+	String& operator=(const char* ptr);
+	String& operator=(String&& other);  // Move assignment
+	String operator +(String&);
+	String& operator +=(String&);
 	char& operator [](int i);
 	bool operator >(String s2);
 	bool operator <(String s2);
@@ -46,27 +46,35 @@ class String{
 	friend void my_strcpy(String& s1, String& s2);
 	friend void my_strncpy(String& dest, const String& src, unsigned const int len);
 	friend int my_strcmp(const String& s1, const String& s2);
-	friend String& my_strcat(String& s1, const String& s2);
-	friend String& my_strncat(String& s1, const String& s2, unsigned const int len);
+	friend void my_strcat(String& s1, const String& s2);
+	friend void my_strncat(String& s1, const String& s2, unsigned const int len);
 	friend String& my_strrev1(String& str);
 	friend void my_strrev2(String& startAddr, String& endAddr);
 	friend String& my_strupper(String& str);
 	friend String& my_strlower(String& str);
 	friend bool my_strchr(String& str, char ch);
 	friend bool my_strrchr(String& str, char ch);
-	friend bool my_strstr(const String mainstr, const String& substr);
+	friend bool my_strstr(const String& mainstr, const String& substr);
 };
 
 /*** default constructor; string s1; ***/
-String :: String():str(nullptr), length(0){};
+String :: String():str(nullptr), length(0){}
 
 /*** parameterised constructor; string s2("Ranjan") ***/
 String :: String(const char* p){
 	length = mystrlen(p);
 	str = new char[length+1];
-	my_strcpy(str, p, length);
+	mystrcpy(str, p, length);
 }
+String::String(String&& other) {
+    // Transfer ownership of resources
+    str = other.str;
+    length = other.length;
 
+    // Null out the source
+    other.str = nullptr;
+    other.length = 0;
+}
 /*** deep copy constructor; s2 = s1; ***/
 String :: String(String& t){
 	length = t.length;
@@ -80,26 +88,28 @@ void String :: getstr(){
 	if(str==nullptr) return;
 	cout<<str<<endl;
 }
-
+int String::len(){
+	return length;
+}
 char* String :: begin(void){
 	return str;
 }
 
 char* String :: end(void){
-	length = strlen(str);
+	//length = strlen(str);
 	return str+length-1;
 }
 
 /*** operator overloaded member function ***/
-String& :: String operator =(String& s1){    // s2 = s1;
+String& String :: operator =(String& s1){    // s2 = s1;
 	length = s1.length;
 	delete str;
 	str = new char[length+1];
 	
-	mystrcpy(str, s2.str, length);
+	mystrcpy(str, s1.str, length);
 	return *this;
 }
-String& :: String operator = (char* ptr){
+String& String :: operator = (const char* ptr){
 	length = mystrlen(ptr);
 	delete str;
 	str = new char[length+1];
@@ -107,21 +117,49 @@ String& :: String operator = (char* ptr){
 	
 	return *this;
 }
-String& :: String operator +(String& s1, String& s2){
-	length = s1.length + s2.length;
-	delete str;
-	str = new char[length + 1];
-	mystrcpy(str, s1.str, length);
-	int i;
-	for(i=0; s2.str[i]; i++){
-		str[++length] = s2.str[i]; // overwrite '\0' with first character of s2.str
+String& String::operator=(String&& other) {
+    if (this != &other) {
+        delete[] str;         // Free existing memory
+        str = other.str;      // Steal the resource
+        length = other.length;
+
+        other.str = nullptr;  // Nullify source
+        other.length = 0;
+    }
+    return *this;
+}
+String String :: operator +(String& s1){ // +ope principal: doesn't modify its operands
+	String result;
+	result.length = length + s1.length;
+	result.str = new char[result.length +1];
+	mystrcpy(result.str, str, result.length);
+
+	for(int i=0; s1.str[i]; i++){
+		result.str[length + i] = s1.str[i]; // overwrite '\0' with first character of s2.str
 	}
-	
-	return *this;
+	result.str[result.length] = '\0';
+	return result;  // call move constructor rather than copy
 
 }
-char& String :: operator [](int i){
-	return str[i];
+String& String :: operator +=(String& s1){
+        int i, j = length;
+        length = length + s1.length;
+        char* temp = new char[length + 1]; // str ko abhi free nhi kr skte
+        mystrcpy(temp, str, length);
+        for(i=0; s1.str[i]; i++){
+                temp[j++] = s1.str[i]; // overwrite '\0' with first character of s1.str
+        }
+	temp[j] = '\0';
+        delete str;     // free resource pointed by str as content already copied to temp;
+        str = temp;     // str point the resource pointed by temp;
+        temp = nullptr; // avoid temp to become dangling pointer
+        return *this;   // safely return the object reference
+
+}
+char& String :: operator [](int index){
+	if (index < 0 || index >= length) 
+		throw out_of_range("Index out of range");
+	return str[index];
 }
 bool String :: operator >(String s2){
 	int i = 0;
@@ -215,73 +253,107 @@ unsigned int my_strlen(String& obj){
 	while(*(obj.str+i++));
 	return i;	
 }
-void my_strcpy(String& s1, String& s2){
+void my_strcpy(String& dest, String& src){
 	int i = 0;
-	while(*(s1.str+i)){
-		*(s2.str+i) = *(s1.str+i);
-		i++;
+	if(dest.length >= src.length){ 
+		while(*(src.str+i)){
+			*(dest.str+i) = *(src.str+i);
+			i++;
+		}
+		*(dest.str+i) = '\0';
 	}
-	*(s1.str+i) = '/0';
+	else{
+		delete[] dest.str;
+		dest.str = new char[src.length + 1];
+		dest.length = src.length;
+		mystrcpy(dest.str, src.str, dest.length);
+	}
 
 }
 void my_strncpy(String& dest, const String& src, unsigned const int len){
 	int i = 0;
-	// fix buffer issue
-	while(i<len && *(src.str+i)){
-		*(dest.str + i) = *(src.str + i);
-		i++;
-	}	
+	if(dest.length >= len){
+		while(i<len && *(src.str+i)){
+			*(dest.str + i) = *(src.str + i);
+			i++;
+		}	
+	}
+	else{
+		delete dest.str;
+		dest.str = new char[src.length + 1];
+		dest.length = src.length;
+
+		while(i<len && *(src.str+i)){
+			*(dest.str + i) = *(src.str + i);
+			i++;
+		}
+
+	}
 }
-int my_strcmp(const String& s1, const string& s2){
+int my_strcmp(const String& s1, const String& s2){
 	int i=0;
-	while(*(s1.str + i){
-		if(*(s1.str + i) != *(s2.str+i){
+	while(*(s1.str + i)){
+		if(*(s1.str + i) != *(s2.str+i)){
 			return *(s1.str+i) - *(s2.str+i);
 		}
 		i++;
 	}
 	return *(s1.str+i) - *(s2.str+i);
 }
-char* my_strcat(String& s1, const String& s2){
+void my_strcat(String& s1, const String& s2){
 	int i=0, j=0;
 
-	// fix buffer issue
-
+	s1.length += s2.length;
+	char *temp = new char[s1.length + 1];
 	while(*(s1.str + i)){
+		*(temp + i) = *(s1.str + i);
 		i++;
 	}
 	
 	while(*(s2.str+j)){
-		*(s1.str+i) = *(s2.str+j);
+		*(temp+i) = *(s2.str+j);
 		i++;
 		j++;
 	}
-	*(s1.str+i) = '\0';
+	*(temp+i) = '\0';
+	delete[] s1.str;
+	s1.str = temp;
+	s1.length = i;
+	temp = nullptr;
 }
-char* my_strncat(String& s1, const String& s2, unsigned const int len){
-	int i=0, j=0;
+void my_strncat(String& s1, const String& s2, unsigned int len) {
+    unsigned int copyLen = (len < s2.length) ? len : s2.length;
 
-	// fix buffer issue
-	while(*(s1.str + i)){
-		i++;
-	}
-	
-	while(*(s2.str+j) && j<len){
-		*(s1.str+i) = *(s2.str+j);
-		i++;
-		j++;
-	}
-	*(s1.str+i) = '\0';
+    int newLength = s1.length + copyLen;
+    char* temp = new char[newLength + 1];
+
+    int i = 0;
+    for (; s1.str[i]; i++) {
+        temp[i] = s1.str[i];
+    }
+
+    int j = 0;
+    while (j < copyLen && s2.str[j]) {
+        temp[i++] = s2.str[j++];
+    }
+
+    temp[i] = '\0';
+
+    delete[] s1.str;
+
+    s1.str = temp;
+    s1.length = newLength;
 }
+
 String& my_strrev1(String& obj){
 	int len, i, j;
 	char temp;
-	j = mystrlen(obj.str)-1;
+	j = obj.length-1;
 	
-	for(i = 0; i<j; i++ j--){
-		temp = *(str+i);
-		*(str+i) = *(str+j);
-		*(str+j) = temp;
+	for(i = 0; i<j; i++, j--){
+		temp = *(obj.str+i);
+		*(obj.str+i) = *(obj.str+j);
+		*(obj.str+j) = temp;
 	}
 	return obj;
 }
@@ -368,8 +440,23 @@ int main(){
 	String s1("vector india");
 	s1.getstr();
 	
-	String s2(s1);
+	String s2 = "bangalore";
 	s2.getstr();
+	cout<<s2.len()<<endl;
+	String s3;
+	s3 = s1 + s2;
+	s3.getstr();
+	cout<<s3.len()<<endl;
+	for(int i = 0; i<s3.len(); i++){
+		cout<<s3[i]<<" ";
+	}
+	cout<<endl;
+	String s4;
+	//cin>>s4; //failed
+	//cout<<s4<<endl; //failed
+	for(int i = 0; i<s4.len(); i++){
+		cin>>s4[i]; //failed
+	}
 	return 0;
 }
 
