@@ -379,6 +379,7 @@ unsigned int mystrlen(const char *ptr){
 	for(len=0; ptr[len]; len++);
 	return len;
 }
+
 void mystrcpy(char* dest, const char* src, int dlen){
 	int i;
 	for(i = 0; i<dlen && *(src+i); i++){
