@@ -3,7 +3,7 @@
 1. String s1;
 2. String s1("Ranjan Kumar");
 3. String s1 = "Ranjan Kumar";
-4. String s2 = "Ranjan Kumar";
+4. String s2 = s1;
 5. s[0] = 'y'; 
 6. 
 7. 
@@ -12,7 +12,7 @@
 10. Support iterator concepts(v.begin(), v.end());
 11. Support stream operator (<<) // cout<<s1<<endl;
 12. Length support
-13. Dynamic memory management
+13. Dynamically manage memory
 14. Move constructor & move assignment operator (used when returning, returning require transferring the ownership, rather than copy)
 
 
@@ -51,23 +51,23 @@ friend unsigned int my_strlen(String& s);
 friend void my_strcpy(String& s1, String& s2);
 friend void my_strncpy(String& dest, const String& src, unsigned const int len);
 friend int my_strcmp(const String& s1, const String& s2);
-friend String& my_strcat(String& s1, const String& s2);
-friend String& my_strncat(String& s1, const String& s2, unsigned const int len);
+friend void my_strcat(String& s1, const String& s2);
+friend void my_strncat(String& s1, const String& s2, unsigned const int len);
 friend String& my_strrev1(String& str);
 friend void my_strrev2(String& startAddr, String& endAddr);
 friend String& my_strupper(String& str);
 friend String& my_strlower(String& str);
 friend bool my_strchr(String& str, char ch);
 friend bool my_strrchr(String& str, char ch);
-friend bool my_strstr(const String mainstr, const String& substr); 
+friend bool my_strstr(const String& mainstr, const String& substr); 
 
 
 ## More implementation detail [String Concatenation]
 ----------------------------------------------------------------------------  
 | Syntax              | Function Signature                                  |
 | ------------------- | --------------------------------------------------- |
-| s1 + s2             | String operator+(const String&) const               |
-| s1 += s2            | String& operator+=(const String&)                   |
+| s1 + s2             | String operator+(const String&) const               |implemented
+| s1 += s2            | String& operator+=(const String&)                   |implemented
 | s1 + "abc"          | String operator+(const char*) const                 |
 | "abc" + s1          | friend String operator+(const char*, const String&) |
 | s1 += "abc"         | String& operator+=(const char*)                     |

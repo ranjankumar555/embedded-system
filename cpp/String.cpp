@@ -21,7 +21,7 @@ class String{
 	/*** member function ***/
 	void getstr(void);
 	int len(void);
-	char* begin(void);
+ 	char* begin(void);
 	char* end(void);	
 
 	/*** operator overloaded member function ***/
@@ -437,23 +437,28 @@ bool my_strstr(const String& mainstr, const String& substr){
 
 /*** main function ***/
 int main(){
+	
 	String s1("vector india");
-	s1.getstr();
+	s1[0] = 's';
+	s1.getstr();	
 	
 	String s2 = "bangalore";
 	s2.getstr();
 	cout<<s2.len()<<endl;
+	
 	String s3;
 	s3 = s1 + s2;
 	s3.getstr();
 	cout<<s3.len()<<endl;
+	
 	for(int i = 0; i<s3.len(); i++){
 		cout<<s3[i]<<" ";
 	}
 	cout<<endl;
+	
 	String s4;
-	//cin>>s4; //failed
-	//cout<<s4<<endl; //failed
+	cin>>s4; //failed
+	cout<<s4<<endl; //failed
 	for(int i = 0; i<s4.len(); i++){
 		cin>>s4[i]; //failed
 	}
