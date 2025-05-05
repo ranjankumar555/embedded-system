@@ -447,6 +447,16 @@ int main(){
 	s3 = s1 + s2;
 	s3.getstr();
 	cout<<s3.len()<<endl;
+	for(int i = 0; i<s3.len(); i++){
+		cout<<s3[i]<<" ";
+	}
+	cout<<endl;
+	String s4;
+	//cin>>s4; //failed
+	//cout<<s4<<endl; //failed
+	for(int i = 0; i<s4.len(); i++){
+		cin>>s4[i]; //failed
+	}
 	return 0;
 }
 
