@@ -17,7 +17,10 @@ class String{
 	String(const char* p);	// parameterised
 	String(String&& other); // move 
 	String(String& t);	// deep copy
-	
+	~String(){
+		delete[] str;
+		cout<<"memory deallocated"<<endl;
+	}	
 	/*** member function ***/
 	void getstr(void);
 	int len(void);
@@ -456,12 +459,12 @@ int main(){
 	}
 	cout<<endl;
 	
-	String s4;
-	cin>>s4; //failed
-	cout<<s4<<endl; //failed
-	for(int i = 0; i<s4.len(); i++){
-		cin>>s4[i]; //failed
-	}
+	//String s4;
+	//cin>>s4; //failed
+	//cout<<s4<<endl; //failed
+	//for(int i = 0; i<s4.len(); i++){
+	//	cin>>s4[i]; //failed
+	//}
 	return 0;
 }
 
