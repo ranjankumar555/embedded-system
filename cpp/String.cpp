@@ -1,4 +1,6 @@
 #include<iostream>
+#include<cstdio>
+#include<fstream>
 using namespace std;
 
 // Non member function prototype
@@ -246,6 +248,43 @@ ostream& operator <<(ostream& out, String& obj){
 	return out;
 }
 istream& operator >>(istream& in, String& obj){
+	if(obj.str == nullptr){ // String s4; cin>>s4; cout<<s4<<endl;
+
+		fstream fin("input.txt", ios::in | ios::out | ios::trunc);
+		if(!fin.is_open()) {
+			cerr << "Error opening file\n";
+			exit(1);
+		}
+
+		char ch;
+		int count = 0, i =0;
+
+		// Read characters from user and store to file
+		while(1)
+		{
+			cin.get(ch);
+			fin.put(ch);
+			if (ch == '\n') break;
+			count++;
+		}
+
+		obj.str = new char[count+1];
+		obj.length = count;
+		
+		// Rewind file to beginning
+		fin.seekg(0, ios::beg);
+		while(1){
+			fin.get(ch);
+			if(ch == '\n'){
+				obj.str[i] = '\0';
+				break;
+			}
+			obj.str[i++] = ch;
+		}
+		fin.close();
+		remove("input.txt"); // delete file to unnecessary fill hardisk
+		return in;
+	}
 	in>>obj.str;
 	return in;
 }
@@ -459,12 +498,22 @@ int main(){
 	}
 	cout<<endl;
 	
+<<<<<<< HEAD
 	//String s4;
 	//cin>>s4; //failed
 	//cout<<s4<<endl; //failed
 	//for(int i = 0; i<s4.len(); i++){
 	//	cin>>s4[i]; //failed
 	//}
+=======
+	String s4, s5;
+	cout<<"enter s4 and s5"<<endl;
+	cin>>s4>>s5;
+	cout<<"S4:"<<s4<<endl; //failed
+	cout<<"s4 len = "<<s4.len()<<endl;
+	s5.getstr();
+	cout<<"s5 len = "<<s5.len()<<endl;
+>>>>>>> 0eeab65c645bcaa72dab1a5ff183424dcfc391b3
 	return 0;
 }
 

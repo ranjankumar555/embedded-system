@@ -5,7 +5,7 @@
 3. String s1 = "Ranjan Kumar";
 4. String s2 = s1;
 5. s[0] = 'y'; 
-6. 
+6. String s4; cin>>s4; cout<<s4<<endl; [Tricky]
 7. 
 8. Comparison operators (==, !=, <, <=, >, >=) 
 9. Supports all kinds of strings concatenation (String s = "Hello" + s2 + " Again" + '!';)
