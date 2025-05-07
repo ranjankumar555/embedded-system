@@ -45,6 +45,10 @@ class String{
 
 	friend ostream& operator <<(ostream& out, String& obj);
 	friend istream& operator >>(istream& in, String& obj);
+	friend String operator+(String& obj, const char* ptr);
+	friend String operator+(const char* ptr, String& obj);
+	friend String operator+(String& obj, const char ch);
+	friend String operator+(const char ch, String& obj);
 
 	/*** friend function ***/
 	friend unsigned int my_strlen(String& s);
@@ -162,7 +166,11 @@ String& String :: operator +=(String& s1){
 
 }
 char& String :: operator [](int index){
-	if (index < 0 || index >= length) 
+	if(str==nullptr){
+		str = new char[10];
+		return str[index];
+	}
+	if (index < 0 || index > length) 
 		throw out_of_range("Index out of range");
 	return str[index];
 }
@@ -288,7 +296,70 @@ istream& operator >>(istream& in, String& obj){
 	in>>obj.str;
 	return in;
 }
-
+String operator+(String& obj, const char* ptr){
+    obj.length = obj.length + mystrlen(ptr);
+    String temp;
+    temp.str = new char[obj.length + 1];
+    temp.length = obj.length;
+    int i=0, j= 0;
+    while(obj.str[i]){
+        temp.str[i] = obj.str[i];
+        i++;
+    }
+    while(ptr[j]){
+        temp.str[i++] = ptr[j++];
+    }
+    temp.str[i]= '\0';
+    
+    return temp;
+}
+String operator+(const char* ptr, String& obj){
+    String temp;
+    temp.length = obj.length + mystrlen(ptr);
+    temp.str = new char[obj.length + 1];
+    
+    int i=0, j= 0;
+    
+    while(ptr[i]){
+        temp.str[i] = ptr[i];
+        i++;
+    }
+    while(obj.str[j]){
+        temp.str[i++] = obj.str[j++];
+    }
+    temp.str[i]= '\0';
+    
+    return temp;    
+}
+String operator+(String& obj, const char ch){
+   String temp;
+   temp.length = obj.length + 1;
+   temp.str = new char[temp.length + 1];
+   int i = 0;
+   while(obj.str[i]){
+       temp.str[i] = obj.str[i];
+       i++;
+   }
+   temp.str[i++] = ch;
+   temp.str[i] = '\0';
+   
+   return temp;
+    
+}
+String operator+(const char ch, String& obj){
+   String temp;
+   temp.length = obj.length + 1;
+   temp.str = new char[temp.length + 1];
+   int i = 0, j=0;
+   temp.str[i++] = ch;
+   while(obj.str[j]){
+       temp.str[i++] = obj.str[j++];
+   }
+   
+   temp.str[i] = '\0';
+   
+   return temp;    
+}
 /*** friend function ***/
 unsigned int my_strlen(String& obj){
 	int i;
@@ -498,22 +569,23 @@ int main(){
 	}
 	cout<<endl;
 	
-<<<<<<< HEAD
-	//String s4;
-	//cin>>s4; //failed
-	//cout<<s4<<endl; //failed
-	//for(int i = 0; i<s4.len(); i++){
-	//	cin>>s4[i]; //failed
-	//}
-=======
-	String s4, s5;
+	/*String s4, s5;
 	cout<<"enter s4 and s5"<<endl;
 	cin>>s4>>s5;
 	cout<<"S4:"<<s4<<endl; //failed
 	cout<<"s4 len = "<<s4.len()<<endl;
 	s5.getstr();
-	cout<<"s5 len = "<<s5.len()<<endl;
->>>>>>> 0eeab65c645bcaa72dab1a5ff183424dcfc391b3
+	cout<<"s5 len = "<<s5.len()<<endl;*/
+
+	String s6; //failed
+	for(int i = 0; i<5; i++){
+		cin>>s6[i]; 
+	}
+	for(int i = 0; i<5; i++){
+		cout<<s6[i]<<endl; 
+	}
+	cout<< "sizeof: "<<sizeof(String)<<endl;
+
 	return 0;
 }
 

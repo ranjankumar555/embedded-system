@@ -11,7 +11,7 @@
 9. Supports all kinds of strings concatenation (String s = "Hello" + s2 + " Again" + '!';)
 10. Support iterator concepts(v.begin(), v.end());
 11. Support stream operator (<<) // cout<<s1<<endl;
-12. Length support
+12. Length synchronization support for each object.
 13. Dynamically manage memory
 14. Move constructor & move assignment operator (used when returning, returning require transferring the ownership, rather than copy)
 
@@ -68,12 +68,159 @@ friend bool my_strstr(const String& mainstr, const String& substr);
 | ------------------- | --------------------------------------------------- |
 | s1 + s2             | String operator+(const String&) const               |implemented
 | s1 += s2            | String& operator+=(const String&)                   |implemented
-| s1 + "abc"          | String operator+(const char*) const                 |
-| "abc" + s1          | friend String operator+(const char*, const String&) |
-| s1 += "abc"         | String& operator+=(const char*)                     |
-| s1 + 'a'            | String operator+(char) const                        |
-| s1 += 'a'           | String& operator+=(char)                            |
-| s1.append(s2)       | String& append(const String&)                       |
-| s1.append("abc")    | String& append(const char*)                         |
-| s1.append(3, '!')   | String& append(int, char)                           |
+| s1 + "abc"          | String operator+(const char*) const                 |implemented
+| "abc" + s1          | friend String operator+(const char*, const String&) |implemented
+| s1 += "abc"         | String& operator+=(const char*)                     |implemented
+| s1 + 'a'            | String operator+(char) const                        |implemented
+| 'a' + s1            | String operator+(char) const                        |implemented
+| s1 += 'a'           | String& operator+=(char)                            |implemented
 ----------------------------------------------------------------------------
+Note: s1 += 'a' is possible but its reverse('a' += s1) not possible, b/c 'a' is not valid m/r location.
+
+String operator+(String& obj, const char* ptr){
+    obj.length = obj.length + mystrlen(ptr);
+    String temp;
+    temp.str = new char[obj.length + 1];
+    temp.length = obj.length;
+    int i=0, j= 0;
+    while(obj.str[i]){
+        temp.str[i] = obj.str[i];
+        i++;
+    }
+    while(ptr[j]){
+        temp.str[i++] = ptr[j++];
+    }
+    temp.str[i]= '\0';
+    
+    return temp;
+}
+String operator+=(String& obj, const char* ptr){
+    obj.length = obj.length + mystrlen(ptr);
+    String temp;
+    temp.str = new char[obj.length + 1];
+    temp.length = obj.length;
+    int i=0, j= 0;
+    while(obj.str[i]){
+        temp.str[i] = obj.str[i];
+        i++;
+    }
+    while(ptr[j]){
+        temp.str[i++] = ptr[j++];
+    }
+    temp.str[i]= '\0';
+    delete[] obj.str;
+    obj = temp;      
+}
+String operator+(const char* ptr, String& obj){
+    String temp;
+    temp.length = obj.length + mystrlen(ptr);
+    temp.str = new char[obj.length + 1];
+    
+    int i=0, j= 0;
+    
+    while(ptr[i]){
+        temp.str[i] = ptr[i];
+        i++;
+    }
+    while(obj.str[j]){
+        temp.str[i++] = obj.str[j++];
+    }
+    temp.str[i]= '\0';
+    
+    return temp;    
+}
+String operator+(String& obj, const char ch){
+   String temp;
+   temp.length = obj.length + 1;
+   temp.str = new char[temp.length + 1];
+   int i = 0;
+   while(obj.str[i]){
+       temp.str[i] = obj.str[i];
+       i++;
+   }
+   temp.str[i++] = ch;
+   temp.str[i] = '\0';
+   
+   return temp;
+    
+}
+String operator+=(String& obj, const char ch){
+    String temp;
+   temp.length = obj.length + 1;
+   temp.str = new char[temp.length + 1];
+   int i = 0;
+   while(obj.str[i]){
+       temp.str[i] = obj.str[i];
+       i++;
+   }
+   temp.str[i++] = ch;
+   temp.str[i] = '\0';
+   delete[] obj.str;
+   obj.str = temp.str;
+   return temp;    
+}
+String operator+(const char ch, String& obj){
+   String temp;
+   temp.length = obj.length + 1;
+   temp.str = new char[temp.length + 1];
+   int i = 0, j=0;
+   temp.str[i++] = ch;
+   while(obj.str[j]){
+       temp.str[i++] = obj.str[j++];
+   }
+   
+   temp.str[i] = '\0';
+   
+   return temp;    
+}
+
+Performed Testcases:
+------------------------------------------------------------------------
+/*** main function ***/
+int main(){
+	
+// 	String s1("vector india");
+// 	s1[0] = 's';
+// 	s1.getstr();	
+	cout<<s1.len()<<endl;
+
+	String s2 = "bangalore";
+	s2.getstr();
+	cout<<s2.len()<<endl;
+	
+// 	String s3;
+// 	s3 = s1 + s2;
+// 	s3.getstr();
+// 	cout<<s3.len()<<endl;
+	
+// 	for(int i = 0; i<s3.len(); i++){
+// 		cout<<s3[i]<<" ";
+// 	}
+// 	cout<<endl;
+
+// 	String s4, s5;
+// 	cout<<"enter s4 and s5"<<endl;
+// 	cin>>s4>>s5;
+// 	cout<<"S4:"<<s4<<endl; //failed
+// 	cout<<"s4 len = "<<s4.len()<<endl;
+// 	s5.getstr();
+// 	cout<<"s5 len = "<<s5.len()<<endl;
+	
+	String s6 = s2 + " in karnataka";
+	s6.getstr();
+	cout<<"s6 len: "<<s6.len()<<endl;
+	
+	String s7 = "in karnataka " + s2;
+	s7.getstr();
+	cout<<"s7 len: "<<s7.len()<<endl;
+	
+	String s8 = 'm' + s2;
+	s8.getstr();
+	cout<<"s8 len: "<<s8.len()<<endl;
+	
+	String s9 = s2 + 'y';
+	s9.getstr();
+	cout<<"s9 len: "<<s9.len()<<endl;
+
+	return 0;
+}
