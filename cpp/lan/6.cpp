@@ -14,7 +14,7 @@ class student{
 		cout<<roll<<"\t"<<name<<"\t"<<marks<<endl;
 	}
 	void sortbyname(student (&arr)[n]);
-	void sortbyroll(student**);
+	void sortbyroll(student(*)[n]);
 	void sortbymarks(student*);
 };
 void student::sortbyname(student (&arr)[n]){
@@ -31,15 +31,15 @@ void student::sortbyname(student (&arr)[n]){
 	}
 
 }
-void student::sortbyroll(student** arr){
+void student::sortbyroll(student(*arr)[n]){
 	int i,j;
 	student temp;
 	for(i = 0; i<n-1; i++){
 		for(j = 0; j<n-i-1; j++){
-			if((arr[j])->roll > (arr[j+1])->roll){
-				temp = *(arr[j]);
-				*(arr[j]) = *(arr[j+1]);
-				*(arr[j+1]) = temp;
+			if(arr[0][j].roll > arr[0][j+1].roll){
+				temp = arr[0][j];
+				arr[0][j] = arr[0][j+1];
+				arr[0][j+1] = temp;
 			}
 		}
 	}
@@ -50,7 +50,7 @@ void student::sortbymarks(student* arr){
 	student temp;
 	for(i = 0; i<n-1; i++){
 		for(j = 0; j<n-i-1; j++){
-			if(arr[j]->marks > arr[j+1]->marks){
+			if(arr[j].marks > arr[j+1].marks){
 				temp = arr[j];
 				arr[j] = arr[j+1];
 				arr[j+1] = temp;
