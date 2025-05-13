@@ -1,0 +1,37 @@
+Ultra Sonic Sensor
+-----------------------------------------
+Features:
+● Power Supply :+5V DC
+● Quiescent Current : <2mA
+● Working Currnt: 15mA
+● Effectual Angle: <15°
+● Ranging Distance : 2cm – 400 cm/1" 13ft
+● Resolution : 0.3 cm
+● Measuring Angle: 30 degree
+● Trigger Input Pulse width: 10uS
+● Dimension: 45mm x 20mm x 15mm
+
+
+Pinout configuration
+----------------------------------------
+VCC = +5VDC
+Trig = Trigger input of Sensor
+Echo = Echo output of Sensor
+GND = GND
+
+Calculation
+--------------------------------------------------------------
+To obtain the distance, measure the width (Ton) of Echo pin.
+Time = Width of Echo pulse, in uS (micro second)
+● Distance in centimeters = Time / 58
+● Distance in inches = Time / 148
+● Or you can utilize the speed of sound, which is 340m/
+
+Connection
+-------------------------------------------------------------
+Note:
+● Please connect the GND pin first before supplying power to VCC.
+● Please make sure the surface of object to be detect should have at least 0.5 meter2
+better performance.
+
+
