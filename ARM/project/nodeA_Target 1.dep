@@ -1,0 +1,6 @@
+Dependencies for Project 'nodeA', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x4E78202C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
+F (.\nodeA_main.c)(0x68234BCB)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "nodea_main.o" --omf_browse "nodea_main.crf" --depend "nodea_main.d")
+F (.\hcsr04.c)(0x68234BCB)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "hcsr04.o" --omf_browse "hcsr04.crf" --depend "hcsr04.d")
+F (.\eint0.c)(0x68234BCB)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "eint0.o" --omf_browse "eint0.crf" --depend "eint0.d")
+F (.\can1_rx_inte.c)(0x68234BCB)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "can1_rx_inte.o" --omf_browse "can1_rx_inte.crf" --depend "can1_rx_inte.d")

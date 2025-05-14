@@ -24,8 +24,8 @@ class B{
 class C{
 	int z;
 	public:
-	friend void set1(A&,B&,C&);
-	friend void get1(A,B,C);
+	friend void set(A&,B&,C&);
+	friend void get(A,B,C);
 
 	friend void set1(A*,B*,C*);
 	friend void get1(A,B,C);
@@ -39,7 +39,10 @@ void get(A a, B b, C c){
 }
 void set1(A* a, B* b, C* c){
 	cout<<"enter x y and z: "<<endl;
-	cin>>a.x>>b.y>>cz;
+	cin>>a->x>>b->y>>c->z;
+	a->x++;
+	b->y++;
+	c->z++;
 }
 void get1(A a, B b, C c){
 	cout<<a.x<<" "<<b.y<<" "<<c.z<<endl;
