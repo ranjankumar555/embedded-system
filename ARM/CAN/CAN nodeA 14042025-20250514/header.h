@@ -2,6 +2,7 @@
 #ifndef __HEADER_H_
 #define __HEADER_H_
 
+#include<lpc21xx.h>
 #define PORT0 0
 #define PORT1 1
 #define SET   1
