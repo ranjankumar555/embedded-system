@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #define SIZE 5
+void displaySubMenu(void);
 template<class type>
 class Stack{
 	private:
@@ -14,36 +15,59 @@ class Stack{
 			}
 		}
 		void push();
-		int pop();
-		int top();
+		void pop();
+		void top();
 		void display_stack();
+		bool isempty();
 };
 template<class type>
 void Stack<type>::push(){
+	if(TOP>=SIZE-1){
+		cout<<"stack is overflow"<<endl;
+		return;
+	}
+
+	cout<<"enter element"<<endl;
+	cin>>stk[++TOP];
+	cout<<stk[TOP]<<" pushed"<<endl;
+}
+template<class type>
+void Stack<type>::pop(){
+	if(TOP<= -1){
+		cout<<"stack is empty"<<endl;
+		return;
+	}
+	cout<<stk[TOP--]<<" popped"<<endl;
 
 }
 template<class type>
-int Stack<type>::pop(){
-
-
-
-	return stk[TOP];
-}
-template<class type>
-int Stack<type>::top(){
-	return stk[TOP];
+void Stack<type>::top(){
+	if(isempty()){
+		cout<<"empty stack detected..."<<endl;
+		return;
+	}
+	cout<<"Top element: "<<stk[TOP]<<endl;
 }
 template<class type>
 void Stack<type>::display_stack(){
 	int i;
-	for(i = 0; i<TOP; i++){
+	if(isempty()){
+		cout<<"empty stack detected..."<<endl;
+		return;
+	}
+	for(i = TOP; i>=0; i--){
 		cout<<stk[i]<<" ";
 	}
 	cout<<endl;
 }
+template<class type>
+bool Stack<type>:: isempty(){
+	return TOP<= -1;
+
+}
 int main(){
 
-	int op, op1, op2, wrongOptionCount=0, flag = 0;
+	int op, op1, op2, wrongOptionCount=0, wrongOptionCount1 = 0, flag = 0;
 
 	Stack<int> i_stk;
 	while(1){
@@ -56,6 +80,7 @@ int main(){
 		cout<<"5) string stack"<<endl;
 		cout<<"6) exit"<<endl;
 		cout<<"select option: ";  // colour coding
+
 		cin>>op;
 		cout<<"----------------------------------------"<<endl;
 		switch(op){
@@ -79,25 +104,63 @@ l1:
 
 				}
 				while(1){
-					cout<<"******** Sub Menu *******"<<endl;
-					cout<<"----------------------------------------"<<endl;
-					cout<<"1) push"<<endl;
-					cout<<"2) pop"<<endl;
-					cout<<"3) top"<<endl;
-					cout<<"4) display stack"<<endl;
-					cout<<"5) main menu"<<endl;
-					cout<<"select option: ";  // colour coding
+					displaySubMenu();
 					cin>>op1;
 					cout<<"----------------------------------------"<<endl;
 					switch(op1){
-						case 1: i_stk.push();
+						case 1: 
+							if(wrongOptionCount1 == 1){
+l2:
+								cout<<"continue 1)old_stack 2)new_stack [1/2]: ";
+								cin>>op2;
+								if(op2 == 1){ ; }
+								else if(op2 == 2){
+									cout<<"new_stack created"<<endl;
+									// constructor call krke reset kro
+									i_stk = Stack<int>();
+								}
+								else{
+									cout<<"invalid input..."<<endl;
+									cout<<"enter [1]old_stack, [2]new_stack"<<endl;
+									// goto use krke phir se ask kro new stack or old stack;
+									goto l2;
+								}
+
+							}
+							
+							i_stk.push();
+							wrongOptionCount1 = 0;
 							break;
-						case 2: i_stk.pop();
+
+						case 2: i_stk.pop();;
+							wrongOptionCount1 = 0;
+
 							break;
-						case 3: i_stk.top();
+						case 3: i_stk.top();;
+							wrongOptionCount1 = 0;
+
 							break;
-						case 4: i_stk.display_stack();
-						case 5: flag = 1; break; // go to main menu fix it
+						case 4: i_stk.display_stack();;
+							wrongOptionCount1 = 0;
+
+							break;
+						case 5: flag = 1; break; // go to main menu
+
+						default: 
+							if(wrongOptionCount1 == 0) 	
+								cout<<"please read the options carefully"<<endl; // blue color coding krna h
+							if(wrongOptionCount1 == 1){ // 2nd chance
+								cout<<"Last chance, please take care"<<endl;    // light red
+							}
+							if(wrongOptionCount1 == 2){ //like 0th indexing; 3rd chance
+								cout<<"************************************"<<endl;   // dark red
+								cout<<"Thanks for using our application"<<endl;     
+								cout<<"please read the manual and comeback properly"<<endl;
+								cout<<"*************************************"<<endl;
+								exit(0);
+							}
+							wrongOptionCount1++;
+
 
 					}
 					if(flag){
@@ -129,22 +192,33 @@ l1:
 				cout<<"Bye..."<<endl;
 				exit(0);
 			default:
-			     	if(wrongOptionCount == 0) 	
+				if(wrongOptionCount == 0) 	
 					cout<<"please read the options carefully"<<endl; // blue color coding krna h
-				 if(wrongOptionCount == 1){ // 2nd chance
-					 cout<<"Last chance, please take care"<<endl;    // light red
-				 }
-				 if(wrongOptionCount == 2){ //like 0th indexing; 3rd chance
-					 cout<<"************************************"<<endl;   // dark red
-					 cout<<"Thanks for using our application"<<endl;     
-					 cout<<"please read the manual and comeback properly"<<endl;
-					 cout<<"*************************************"<<endl;
-					 exit(0);
-				 }
-				 wrongOptionCount++;
+				if(wrongOptionCount == 1){ // 2nd chance
+					cout<<"Last chance, please take care"<<endl;    // light red
+				}
+				if(wrongOptionCount == 2){ //like 0th indexing; 3rd chance
+					cout<<"************************************"<<endl;   // dark red
+					cout<<"Thanks for using our application"<<endl;     
+					cout<<"please read the manual and comeback properly"<<endl;
+					cout<<"*************************************"<<endl;
+					exit(0);
+				}
+				wrongOptionCount++;
 		}
 	}
 
 
 	return 0;
+}
+
+void displaySubMenu(void){
+	cout<<"******** Sub Menu *******"<<endl;
+	cout<<"----------------------------------------"<<endl;
+	cout<<"1) push"<<endl;
+	cout<<"2) pop"<<endl;
+	cout<<"3) top"<<endl;
+	cout<<"4) display stack"<<endl;
+	cout<<"5) main menu"<<endl;
+	cout<<"select option: ";  // colour coding
 }
