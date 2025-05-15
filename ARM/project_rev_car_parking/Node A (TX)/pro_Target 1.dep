@@ -1,0 +1,8 @@
+Dependencies for Project 'pro', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x4E78202C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
+F (.\can_rx_inte.c)(0x66E3D08A)()
+F (.\delay.c)(0x66E3CE5A)()
+F (.\eint0.c)(0x66E3CEA0)()
+F (.\nodeA_driver.c)(0x66E3D09A)()
+F (.\nodeA_main.c)(0x66E3CEA3)()
+F (.\uart0_driver.c)(0x66E3D0E9)()
