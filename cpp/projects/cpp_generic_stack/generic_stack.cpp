@@ -128,7 +128,9 @@ l1:
 				cout<<"Thank you for using our application"<<endl;
 				cout<<"Bye..."<<endl;
 				exit(0);
-			default: cout<<"please read the options carefully"<<endl; // blue color coding krna h
+			default:
+			     	if(wrongOptionCount == 0) 	
+					cout<<"please read the options carefully"<<endl; // blue color coding krna h
 				 if(wrongOptionCount == 1){ // 2nd chance
 					 cout<<"Last chance, please take care"<<endl;    // light red
 				 }
