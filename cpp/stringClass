@@ -62,7 +62,8 @@ friend bool my_strrchr(String& str, char ch);
 friend bool my_strstr(const String& mainstr, const String& substr); 
 
 
-## More implementation detail [String Concatenation]
+## More implementation detail 
+[String Concatenation: total 8 cases possible ]
 ----------------------------------------------------------------------------  
 | Syntax              | Function Signature                                  |
 | ------------------- | --------------------------------------------------- |
@@ -174,6 +175,7 @@ String operator+(const char ch, String& obj){
    return temp;    
 }
 
+ 
 Performed Testcases:
 ------------------------------------------------------------------------
 /*** main function ***/
@@ -201,7 +203,7 @@ int main(){
 // 	String s4, s5;
 // 	cout<<"enter s4 and s5"<<endl;
 // 	cin>>s4>>s5;
-// 	cout<<"S4:"<<s4<<endl; //failed
+// 	cout<<"S4:"<<s4<<endl; 
 // 	cout<<"s4 len = "<<s4.len()<<endl;
 // 	s5.getstr();
 // 	cout<<"s5 len = "<<s5.len()<<endl;
