@@ -20,8 +20,10 @@ class String{
 	String(String&& other); // move 
 	String(String& t);	// deep copy
 	~String(){
+		if(str!=nullptr){
 		delete[] str;
 		cout<<"memory deallocated"<<endl;
+		}
 	}	
 	/*** member function ***/
 	void getstr(void);
@@ -37,7 +39,7 @@ class String{
 	String operator +(String&);
 	String& operator +=(String&);
 	String operator+(const char* ); // def s1 + "abc"
-	String operator +=(const char*);
+	String& operator +=(const char*);
 	String operator+(const char );  // def s1 + 'a'
 	String& operator +=(const char ch);
 	
@@ -152,7 +154,7 @@ String String :: operator +(String& s1){ // +ope principal: doesn't modify its o
 		result.str[length + i] = s1.str[i]; // overwrite '\0' with first character of s2.str
 	}
 	result.str[result.length] = '\0';
-	return result;  // call move constructor rather than copy
+	return move(result);  // call move constructor rather than copy
 
 }
 String& String :: operator +=(String& s1){
@@ -187,9 +189,9 @@ String String::operator+(const char* ptr){
 	}
 	temp.str[i]= '\0';
 
-	return temp;
+	return move(temp);
 }
-String String :: operator+=(const char* ptr){
+String& String :: operator+=(const char* ptr){
 
 	String temp;
 	temp.length = length + mystrlen(ptr);
@@ -590,38 +592,90 @@ bool my_strstr(const String& mainstr, const String& substr){
 }
 
 /*** main function ***/
-int main(){
-	
-/*	String s1("vector india");
+int main() {
+
+	String s1("vector india");
 	s1[0] = 's';
-	s1.getstr();	
-	
+
+	cout << "s1 = ";
+	s1.getstr();
+	cout<<"-------------------------------------------"<<endl;
 	String s2 = "bangalore";
+	cout<<"s2  = ";
 	s2.getstr();
-	cout<<s2.len()<<endl;
-	
+	cout << "Length of s2 = " << s2.len() << endl;
+
+	cout<<"-------------------------------------------"<<endl;
 	String s3;
+
+	// Concatenation: Case 1
+	cout
 	s3 = s1 + s2;
+	cout << "s3 = ";
 	s3.getstr();
-	cout<<s3.len()<<endl;
-	
-	for(int i = 0; i<s3.len(); i++){
-		cout<<s3[i]<<" ";
+
+	// Case 2
+	cout<<"-------------------------------------------"<<endl;
+	s3 += s1;
+	cout << "After s3 += s1, s3 = " << s3 << endl;
+
+	// Case 3
+	cout<<"-------------------------------------------"<<endl;
+	s3 = s1 + "vector";
+	cout << "s1 = " << s1 << endl;
+
+	// Case 4:
+	cout<<"-------------------------------------------"<<endl;
+	s3 = "vector" + s1;
+	cout << "s3 = vector + s1 = " << s3 << endl;
+
+	// Case 5
+	cout<<"-------------------------------------------"<<endl;
+	cout << "s3 += \"Vector\" " << endl;
+	s3 += "Vector";
+	cout << "s3 = " << s3 << endl;
+
+	// Case 6
+	cout<<"-------------------------------------------"<<endl;
+	s3 = s1 + 'x';
+	cout << "s1 + 'x' = " << s3 << endl;
+
+	// Case 7
+	cout<<"-------------------------------------------"<<endl;
+	s3 = 'x' + s1;
+	cout << "'x' + s1 = " << s3 << endl;
+
+	// Case 8
+	cout<<"-------------------------------------------"<<endl;
+	s3 += 'x';
+	cout << "s3 += 'x' = " << s3 << endl;
+	cout << "Length of s3 = " << s3.len() << endl;
+
+	// [] and << overload
+	cout<<"-------------------------------------------"<<endl;
+	cout << "Characters of s3: ";
+	for (int i = 0; i < s3.len(); i++) {
+		cout << s3[i] << " ";
 	}
-	cout<<endl;
-*/	
+	cout << endl;
+	
+	// >> overload and chaining support
+	cout<<"-------------------------------------------"<<endl;
 	String s4, s5;
-	cout<<"enter s4 and s5"<<endl;
-	cin>>s4>>s5;
-	cout<<"S4:"<<s4<<endl; //failed
-	cout<<"s4 len = "<<s4.len()<<endl;
+	cout << "Enter two strings (s4 and s5): ";
+	cin >> s4 >> s5;
+
+	cout << "S4: " << s4 << endl;
+	cout << "Length of s4 = " << s4.len() << endl;
+
+	cout<<"-------------------------------------------"<<endl;
+	cout << "s5 = ";
 	s5.getstr();
-	cout<<"s5 len = "<<s5.len()<<endl;
+	cout << "Length of s5 = " << s5.len() << endl;
 
-
+	cout<<"-------------------------------------------"<<endl;
 	return 0;
 }
-
 // Non member function definition
 unsigned int mystrlen(const char *ptr){
 	int len;

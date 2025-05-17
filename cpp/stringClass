@@ -64,165 +64,91 @@ friend bool my_strstr(const String& mainstr, const String& substr);
 
 ## More implementation detail 
 [String Concatenation: total 8 cases possible ]
-----------------------------------------------------------------------------  
-| Syntax              | Function Signature                                  |
-| ------------------- | --------------------------------------------------- |
-| s1 + s2             | String operator+(const String&) const               |implemented
-| s1 += s2            | String& operator+=(const String&)                   |implemented
-| s1 + "abc"          | String operator+(const char*) const                 |implemented
-| "abc" + s1          | friend String operator+(const char*, const String&) |implemented
-| s1 += "abc"         | String& operator+=(const char*)                     |implemented
-| s1 + 'a'            | String operator+(char) const                        |implemented
-| 'a' + s1            | String operator+(char) const                        |implemented
-| s1 += 'a'           | String& operator+=(char)                            |implemented
-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------  
+| Syntax              | Implemented through member/friend   |  Status       |
+| ------------------- | ------------------------------------|----------------
+| s1 + s2             | member function               	    |implemented    |
+| s1 += s2            | member function                     |implemented    |
+| s1 + "abc"          | member function                     |implemented    |
+| "abc" + s1          | friend function                     |implemented    |
+| s1 += "abc"         | member function                     |implemented    |
+| s1 + 'a'            | member function                     |implemented    |
+| 'a' + s1            | friend function                     |implemented    |
+| s1 += 'a'           | member function                     |implemented    |
+-----------------------------------------------------------------------------
 Note: s1 += 'a' is possible but its reverse('a' += s1) not possible, b/c 'a' is not valid m/r location.
-
-String operator+(String& obj, const char* ptr){
-    obj.length = obj.length + mystrlen(ptr);
-    String temp;
-    temp.str = new char[obj.length + 1];
-    temp.length = obj.length;
-    int i=0, j= 0;
-    while(obj.str[i]){
-        temp.str[i] = obj.str[i];
-        i++;
-    }
-    while(ptr[j]){
-        temp.str[i++] = ptr[j++];
-    }
-    temp.str[i]= '\0';
-    
-    return temp;
-}
-String operator+=(String& obj, const char* ptr){
-    obj.length = obj.length + mystrlen(ptr);
-    String temp;
-    temp.str = new char[obj.length + 1];
-    temp.length = obj.length;
-    int i=0, j= 0;
-    while(obj.str[i]){
-        temp.str[i] = obj.str[i];
-        i++;
-    }
-    while(ptr[j]){
-        temp.str[i++] = ptr[j++];
-    }
-    temp.str[i]= '\0';
-    delete[] obj.str;
-    obj = temp;      
-}
-String operator+(const char* ptr, String& obj){
-    String temp;
-    temp.length = obj.length + mystrlen(ptr);
-    temp.str = new char[obj.length + 1];
-    
-    int i=0, j= 0;
-    
-    while(ptr[i]){
-        temp.str[i] = ptr[i];
-        i++;
-    }
-    while(obj.str[j]){
-        temp.str[i++] = obj.str[j++];
-    }
-    temp.str[i]= '\0';
-    
-    return temp;    
-}
-String operator+(String& obj, const char ch){
-   String temp;
-   temp.length = obj.length + 1;
-   temp.str = new char[temp.length + 1];
-   int i = 0;
-   while(obj.str[i]){
-       temp.str[i] = obj.str[i];
-       i++;
-   }
-   temp.str[i++] = ch;
-   temp.str[i] = '\0';
-   
-   return temp;
-    
-}
-String operator+=(String& obj, const char ch){
-    String temp;
-   temp.length = obj.length + 1;
-   temp.str = new char[temp.length + 1];
-   int i = 0;
-   while(obj.str[i]){
-       temp.str[i] = obj.str[i];
-       i++;
-   }
-   temp.str[i++] = ch;
-   temp.str[i] = '\0';
-   delete[] obj.str;
-   obj.str = temp.str;
-   return temp;    
-}
-String operator+(const char ch, String& obj){
-   String temp;
-   temp.length = obj.length + 1;
-   temp.str = new char[temp.length + 1];
-   int i = 0, j=0;
-   temp.str[i++] = ch;
-   while(obj.str[j]){
-       temp.str[i++] = obj.str[j++];
-   }
-   
-   temp.str[i] = '\0';
-   
-   return temp;    
-}
-
  
 Performed Testcases:
 ------------------------------------------------------------------------
 /*** main function ***/
-int main(){
-	
-// 	String s1("vector india");
-// 	s1[0] = 's';
-// 	s1.getstr();	
-	cout<<s1.len()<<endl;
+int main() {
+    
+    String s1("vector india");
+    s1[0] = 's';  
 
-	String s2 = "bangalore";
-	s2.getstr();
-	cout<<s2.len()<<endl;
-	
-// 	String s3;
-// 	s3 = s1 + s2;
-// 	s3.getstr();
-// 	cout<<s3.len()<<endl;
-	
-// 	for(int i = 0; i<s3.len(); i++){
-// 		cout<<s3[i]<<" ";
-// 	}
-// 	cout<<endl;
+    cout << "s1 = ";
+    s1.getstr();  
 
-// 	String s4, s5;
-// 	cout<<"enter s4 and s5"<<endl;
-// 	cin>>s4>>s5;
-// 	cout<<"S4:"<<s4<<endl; 
-// 	cout<<"s4 len = "<<s4.len()<<endl;
-// 	s5.getstr();
-// 	cout<<"s5 len = "<<s5.len()<<endl;
-	
-	String s6 = s2 + " in karnataka";
-	s6.getstr();
-	cout<<"s6 len: "<<s6.len()<<endl;
-	
-	String s7 = "in karnataka " + s2;
-	s7.getstr();
-	cout<<"s7 len: "<<s7.len()<<endl;
-	
-	String s8 = 'm' + s2;
-	s8.getstr();
-	cout<<"s8 len: "<<s8.len()<<endl;
-	
-	String s9 = s2 + 'y';
-	s9.getstr();
-	cout<<"s9 len: "<<s9.len()<<endl;
+    String s2 = "bangalore";
+    s2.getstr();
+    cout << "Length of s2 = " << s2.len() << endl;
 
-	return 0;
+    String s3;
+
+    // Concatenation: Case 1
+    s3 = s1 + s2;
+    cout << "s3 = ";
+    s3.getstr();
+
+    // Case 2
+    s3 += s1;
+    cout << "After s3 += s1, s3 = " << s3 << endl;
+
+    // Case 3
+    s3 = s1 + "vector";
+    cout << "s1 = " << s1 << endl;
+
+    // Case 4: 
+    s3 = "vector" + s1;
+    cout << "s3 = vector + s1 = " << s3 << endl;
+
+    // Case 5:
+    cout << "Appending \"Vector\" using += operator..." << endl;
+    s3 += "Vector";
+    cout << "s3 = " << s3 << endl;
+
+    // Case 6: String + character
+    s3 = s1 + 'x';
+    cout << "s1 + 'x' = " << s3 << endl;
+
+    // Case 7: character + String
+    s3 = 'x' + s1;
+    cout << "'x' + s1 = " << s3 << endl;
+
+    // Case 8: += character
+    s3 += 'x';
+    cout << "s3 += 'x' = " << s3 << endl;
+	cout << "Length of s3 = " << s3.len() << endl;
+
+    // [] and << overload 
+    cout << "Characters of s3: ";
+    for (int i = 0; i < s3.len(); i++) {
+        cout << s3[i] << " ";
+    }
+    cout << endl;
+
+    // Case 10: Input and Output using >> and <<
+    String s4, s5;
+    cout << "Enter two strings (s4 and s5): ";
+    cin >> s4 >> s5;
+
+    cout << "S4: " << s4 << endl;
+    cout << "Length of s4 = " << s4.len() << endl;
+
+    cout << "s5 = ";
+    s5.getstr();
+    cout << "Length of s5 = " << s5.len() << endl;
+
+    return 0;
 }
+
