@@ -171,7 +171,7 @@ String& String :: operator +=(String& s1){
 
 }
 
-String operator+(const char* ptr){
+String String::operator+(const char* ptr){
 
 	String temp;
 	temp.length = length + mystrlen(ptr);
@@ -189,7 +189,7 @@ String operator+(const char* ptr){
 
 	return temp;
 }
-String operator+=(const char* ptr){
+String String :: operator+=(const char* ptr){
 
 	String temp;
 	temp.length = length + mystrlen(ptr);
@@ -205,9 +205,15 @@ String operator+=(const char* ptr){
 	}
 	temp.str[i]= '\0';
 	delete[] str;
-	obj = temp;
+
+	str = temp.str;
+	length = temp.length;
+	
+	temp.str = 0;
+	temp.length = 0;
+	return *this;
 }
-String operator+(const char ch){
+String String::operator+(const char ch){
 	String temp;
 	temp.length = length + 1;
 	temp.str = new char[temp.length + 1];
@@ -222,7 +228,7 @@ String operator+(const char ch){
 	return temp;
 
 }
-String& operator+=(const char ch){
+String& String::operator+=(const char ch){
    String temp;
    temp.length = length + 1;
    temp.str = new char[temp.length + 1];
@@ -236,7 +242,9 @@ String& operator+=(const char ch){
    delete[] str;
    str = temp.str;
    length = temp.length;
-   return temp;
+   temp.str = 0;
+   temp.length = 0;
+   return *this;
 }
 char& String :: operator [](int index){
 	if(str==nullptr){
