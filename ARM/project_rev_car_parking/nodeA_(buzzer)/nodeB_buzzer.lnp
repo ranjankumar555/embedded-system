@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "uart0_driver.o" "can_rx_inte.o" "delay.o" "eint0.o" "nodea_driver.o" "nodea_main.o" --strict --scatter "nodeB_buzzer.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\nodeB_buzzer.map" -o "nodeB_buzzer.axf"

@@ -1,0 +1,25 @@
+*** Creating Trace Output File 'nodeB_sensor.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"can1_rx_inte.o"'
+### List of Objects: adding '"delay.o"'
+### List of Objects: adding '"hcsr04.o"'
+### List of Objects: adding '"nodeb_driver.o"'
+### List of Objects: adding '"nodeb_main.o"'
+### List of Objects: adding '"uart0_driver.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI "startup.o" "can1_rx_inte.o" "delay.o" "hcsr04.o" "nodeb_driver.o" "nodeb_main.o" "uart0_driver.o" --strict --scatter "nodeB_sensor.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\nodeB_sensor.map" -o "nodeB_sensor.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'nodeB_sensor.axf'
+### ADS-LD Command File: 'nodeB_sensor.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'nodeB_sensor.lnp', Handle=0x000002FC
+### Writing '.lnp' file
+### ADS-LD Command file 'nodeB_sensor.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "can1_rx_inte.o" "delay.o" "hcsr04.o" "nodeb_driver.o" "nodeb_main.o" "uart0_driver.o" --strict --scatter "nodeB_sensor.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\nodeB_sensor.map" -o "nodeB_sensor.axf"

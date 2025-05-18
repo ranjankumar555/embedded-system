@@ -87,25 +87,3 @@ void lcd_cgram(void){
 	}
 
 }
-
-void lcd_integer(int num){
-
-    int a[10],i=0;
-    if(num==0)
-        lcd_data(num+48);
-    if(num<0)
-    {
-        lcd_data('-');
-        num=-num;
-    }
-    while(num)
-    {
-        a[i++]=(num%10)+48;
-        num=num/10;
-       
-    }
-    for(i=i-1;i>=0;i--)
-    {
-        lcd_data(a[i]);
-    }
-}

@@ -1,1 +1,0 @@
--c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil4\ARM\CMSIS\Include" -I "C:\Keil4\ARM\INC\Philips" -o "nodea_driver.o" --omf_browse "nodea_driver.crf" --depend "nodea_driver.d" "..\Node A (TX)\nodeA_driver.c"

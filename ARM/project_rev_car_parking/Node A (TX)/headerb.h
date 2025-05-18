@@ -7,18 +7,24 @@ typedef float f32;
 extern void delay_sec(unsigned int sec);
 extern void delay_ms(unsigned int ms);
 
-extern void led(void);
+extern void lcd_init(void);
 
 extern void lcd_data(unsigned char data);
+extern void lcd_str(unsigned char* p);
+extern void lcd_cgram(void);
 extern void lcd_cmd(unsigned char cmd);
-extern void lcd_init(void);
-extern void lcd_4data(unsigned char data);
-extern void lcd_4cmd(unsigned char cmd);
-extern void lcd_4init(void);
-extern void lcd_4string(char *ptr);
-extern void lcd_4integer(int num);
-extern void lcd_4float(f32 f);
-extern void lcd_4scroll(char *p);
+extern void lcd_integer(int num);
+//extern void lcd_data(unsigned char data);
+//extern void lcd_cmd(unsigned char cmd);
+//extern void lcd_init(void);
+//extern void lcd_4data(unsigned char data);
+//extern void lcd_4cmd(unsigned char cmd);
+//extern void lcd_4init(void);
+//extern void lcd_str(unsigned char* p);
+//extern void lcd_4string(char *ptr);
+//extern void lcd_4integer(int num);
+//extern void lcd_4float(f32 f);
+//extern void lcd_4scroll(char *p);
 //extern void lcd_cgram(void);
 
 extern void uart0_init(unsigned int baud);
