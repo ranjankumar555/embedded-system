@@ -1,0 +1,4 @@
+--cpu ARM7TDMI "startup.o" "uart0_driver.o" "can_rx_inte.o" "delay.o" "eint0.o" "nodea_driver.o" "nodea_main.o" --strict --scatter "can2_tx.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\can2_tx.map" -o "can2_tx.axf"

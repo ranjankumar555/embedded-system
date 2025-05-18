@@ -1,5 +1,5 @@
 #include<lpc21xx.h>
-#include"headerb.h"
+#include "headerb.h"
 void uart0_init(unsigned int baud)
 {
 	unsigned int result=0,pclk;
@@ -61,20 +61,19 @@ uart0_tx(n2);
 }
 void uart0_integer(int num)
 {
-    int a[10],i;
+    int a[10],i=0;
     if(num==0)
-        uart0_tx('0');
-    else if(num<0)
+        uart0_tx(num+48);
+    if(num<0)
     {
         uart0_tx('-');
         num=-num;
     }
-    i=0;
-    while(num>0)
+    while(num)
     {
-        a[i]=num%10+48;
+        a[i++]=(num%10)+48;
         num=num/10;
-        i++;
+       
     }
     for(i=i-1;i>=0;i--)
     {

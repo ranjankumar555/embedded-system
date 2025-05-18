@@ -1,0 +1,25 @@
+*** Creating Trace Output File 'can2_tx.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"uart0_driver.o"'
+### List of Objects: adding '"can_rx_inte.o"'
+### List of Objects: adding '"delay.o"'
+### List of Objects: adding '"eint0.o"'
+### List of Objects: adding '"nodea_driver.o"'
+### List of Objects: adding '"nodea_main.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI "startup.o" "uart0_driver.o" "can_rx_inte.o" "delay.o" "eint0.o" "nodea_driver.o" "nodea_main.o" --strict --scatter "can2_tx.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\can2_tx.map" -o "can2_tx.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'can2_tx.axf'
+### ADS-LD Command File: 'can2_tx.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'can2_tx.lnp', Handle=0x00000238
+### Writing '.lnp' file
+### ADS-LD Command file 'can2_tx.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

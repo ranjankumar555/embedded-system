@@ -2,14 +2,13 @@
 #include"headerb.h"
 #define LED (1<<17)
 #define BUZ (1<<21)
-u32 flag=0,flag1=0;
+u32 extflag=0,flag1=0;
 can1 c;
 main()
 {
-  can1_init();
+  	can1_init();
 	uart0_init(9600);
 	config_VIC_for_EINT0();
-	config_EINT0();
 	config_vic_for_can1rx();
 	IODIR0|=LED;
 	IODIR0|=BUZ;
@@ -17,7 +16,7 @@ main()
 	while(1)
 	{
 
-		if(flag==1)
+		if(extflag==1)
 		{
 			IOCLR0|=LED;
 			if(c.byteA>=300&&c.byteA<=400&&flag1==1)

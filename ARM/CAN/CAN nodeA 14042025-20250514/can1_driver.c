@@ -20,7 +20,7 @@ void can1_tx(CAN1 v){
 		C1TDB1=v.byteB;
 	}
 	else
-		C1TFI1|=(1<<30);//rtr=1
+		C1TFI01|=(1<<30);//rtr=1
 	
 	C1CMR=1|(1<<5);//Select Txbuf1 & start Xmission
 	while(TCS==0);

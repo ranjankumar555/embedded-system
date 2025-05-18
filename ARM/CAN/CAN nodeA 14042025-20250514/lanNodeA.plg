@@ -7,96 +7,23 @@ E:\v24be5r2\v24be5r2\ARM\CAN\CAN nodeA 14042025-20250514\lanNodeA.uvproj
 Project File Date:  05/14/2025
 
 <h2>Output:</h2>
+Build target 'Target 1'
+compiling can1_driver.c...
+can1_driver.c(23): error:  #20: identifier "C1TFI01" is undefined
 compiling main_nodeA.c...
-main_nodeA.c - 0 Error(s), 0 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling can1_driver.c...
+can1_driver.c(23): error:  #20: identifier "C1TFI01" is undefined
+Target not created
 Build target 'Target 1'
 assembling Startup.s...
 compiling can1_driver.c...
-compiling delay.c...
-delay.c(4): error:  #20: identifier "T0TC" is undefined
-delay.c(5): error:  #20: identifier "T0PC" is undefined
-delay.c(6): error:  #20: identifier "T0PR" is undefined
-delay.c(7): error:  #20: identifier "T0TCR" is undefined
-delay.c(12): error:  #20: identifier "T0TC" is undefined
-delay.c(13): error:  #20: identifier "T0PC" is undefined
-delay.c(14): error:  #20: identifier "T0PR" is undefined
-delay.c(15): error:  #20: identifier "T0TCR" is undefined
-compiling lcd_4bit_driver.c...
-lcd_4bit_driver.c(5): error:  #20: identifier "IOCLR1" is undefined
-lcd_4bit_driver.c(7): error:  #20: identifier "IOSET1" is undefined
-lcd_4bit_driver.c(30): error:  #20: identifier "IOCLR1" is undefined
-lcd_4bit_driver.c(32): error:  #20: identifier "IOSET1" is undefined
-lcd_4bit_driver.c(52): error:  #20: identifier "IODIR1" is undefined
-lcd_4bit_driver.c(53): error:  #20: identifier "PINSEL2" is undefined
-lcd_4bit_driver.c(55): error:  #20: identifier "IOCLR1" is undefined
-compiling uart0_intrpt.c...
-uart0_intrpt.c(5): error:  #20: identifier "U0IIR" is undefined
-uart0_intrpt.c(8): error:  #20: identifier "temp" is undefined
-uart0_intrpt.c(8): error:  #20: identifier "U0RBR" is undefined
-uart0_intrpt.c(9): error:  #20: identifier "U0THR" is undefined
-uart0_intrpt.c(12): error:  #20: identifier "VICVectAddr" is undefined
-uart0_intrpt.c(20): error:  #20: identifier "IOSET0" is undefined
-uart0_intrpt.c(20): error:  #20: identifier "ALL_LED" is undefined
-uart0_intrpt.c(23): error:  #20: identifier "IOCLR0" is undefined
-uart0_intrpt.c(23): error:  #20: identifier "ALL_LED" is undefined
-uart0_intrpt.c(26): error:  #20: identifier "EXTINT" is undefined
-uart0_intrpt.c(27): error:  #20: identifier "VICVectAddr" is undefined
-uart0_intrpt.c(33): error:  #20: identifier "VICIntSelect" is undefined
-uart0_intrpt.c(34): error:  #20: identifier "VICVectCntl0" is undefined
-uart0_intrpt.c(35): error:  #20: identifier "VICVectAddr0" is undefined
-uart0_intrpt.c(36): error:  #20: identifier "VICIntEnable" is undefined
-uart0_intrpt.c(37): error:  #20: identifier "U0IER" is undefined
-uart0_intrpt.c(40): error:  #20: identifier "PINSEL1" is undefined
-uart0_intrpt.c(41): error:  #20: identifier "VICVectCntl1" is undefined
-uart0_intrpt.c(42): error:  #20: identifier "VICVectAddr1" is undefined
-uart0_intrpt.c(46): error:  #20: identifier "EXTMODE" is undefined
-uart0_intrpt.c(47): error:  #20: identifier "EXTPOLAR" is undefined
-compiling uart0driver.c...
-uart0driver.c(7): error:  #20: identifier "PINSEL0" is undefined
-uart0driver.c(9): error:  #20: identifier "U0LCR" is undefined
-uart0driver.c(10): error:  #20: identifier "U0DLL" is undefined
-uart0driver.c(11): error:  #20: identifier "U0DLM" is undefined
-uart0driver.c(16): error:  #20: identifier "U0THR" is undefined
-uart0driver.c(17): error:  #20: identifier "U0LSR" is undefined
-uart0driver.c(21): error:  #20: identifier "U0LSR" is undefined
-uart0driver.c(22): error:  #20: identifier "U0RBR" is undefined
-uart0driver.c(27): error:  #20: identifier "U0THR" is undefined
-uart0driver.c(28): error:  #20: identifier "U0LSR" is undefined
-uart0driver.c(38): error:  #20: identifier "U0LSR" is undefined
-uart0driver.c(39): error:  #20: identifier "U0RBR" is undefined
-Target not created
-Build target 'Target 1'
-compiling can1_driver.c...
+can1_driver.c(23): error:  #20: identifier "C1TFI01" is undefined
 compiling main_nodeA.c...
 compiling delay.c...
-compiling lcd_4bit_driver.c...
-compiling uart0_intrpt.c...
-uart0_intrpt.c(8): error:  #20: identifier "temp" is undefined
-uart0_intrpt.c(20): error:  #20: identifier "ALL_LED" is undefined
-uart0_intrpt.c(23): error:  #20: identifier "ALL_LED" is undefined
-compiling uart0driver.c...
 Target not created
 Build target 'Target 1'
 compiling can1_driver.c...
-linking...
-Program Size: Code=812 RO-data=16 RW-data=0 ZI-data=1288  
-"lanNodeA.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-linking...
-Program Size: Code=812 RO-data=16 RW-data=0 ZI-data=1288  
-"lanNodeA.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-linking...
-Program Size: Code=1084 RO-data=16 RW-data=0 ZI-data=1288  
-FromELF: creating hex file...
-"lanNodeA.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-linking...
-Program Size: Code=1084 RO-data=16 RW-data=0 ZI-data=1288  
-FromELF: creating hex file...
-"lanNodeA.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-linking...
-Program Size: Code=1084 RO-data=16 RW-data=0 ZI-data=1288  
-FromELF: creating hex file...
-"lanNodeA.axf" - 0 Error(s), 0 Warning(s).
+can1_driver.c(23): error:  #20: identifier "C1TFI01" is undefined
+Target not created

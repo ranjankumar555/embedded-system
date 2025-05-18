@@ -21,7 +21,7 @@ int distance(void)
     T0TCR=0;
     distance=T0TC;
     if(distance<38000)
-        distance=distance/59;
+        distance=distance/59; // distance in cm
     else
         distance=0;
     return distance;

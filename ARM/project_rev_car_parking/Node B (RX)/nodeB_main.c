@@ -19,8 +19,10 @@ main()
 			m.dlc=1;
             j=distance();
 			m.byteA=j;
+			uart0_integer(j);
+			//uart0_tx_string("\r\n");
 			can1_tx(m);
-			delay_ms(250);
+			delay_ms(20);
 		}
 	}
 }

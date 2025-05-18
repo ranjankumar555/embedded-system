@@ -1,6 +1,6 @@
 #include <LPC21xx.H>
 #include"headerb.h"
-u32 *ptr=(u32*)0XE0038000;
+u32 *ptr=(u32*)0XE0038000;  // base address
 void can1_init(void)
 {
 	PINSEL1=0x14000;
@@ -24,8 +24,8 @@ void can1_tx(can1 v)
 	C2TFI1=(v.dlc<<16);
 	if(v.rtr==0)
 	{
-		C2TDA1=v.byteA;
-		C2TDB1=v.byteB;
+		C2TDA1 = v.byteA;
+		C2TDB1 = v.byteB;
 	}
 	else
 	{
