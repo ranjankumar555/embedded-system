@@ -14,21 +14,27 @@ class String{
 	unsigned int length;
 	
 	public:
+	static int count;
  	/*** Constructor ***/
 	String();		// default
 	String(const char* p);	// parameterised
 	String(String&& other); // move 
 	String(String& t);	// deep copy
 	~String(){
+		if(count==0){
+			//cout<<"\033[32mCongrats!!! no memory leaks\033[0m"<<endl;
+		}
+
 		if(str!=nullptr){
-		delete[] str;
-		cout<<"memory deallocated"<<endl;
+			delete[] str;
+			cout<<"memory deallocated"<<endl;
+			count++;
 		}
 	}	
 	/*** member function ***/
 	void getstr(void);
 	int len(void);
- 	char* begin(void);
+	char* begin(void);
 	char* end(void);	
 
 	/*** operator overloaded member function ***/
@@ -44,12 +50,12 @@ class String{
 	String& operator +=(const char ch);
 	
 	char& operator [](int i);
-	bool operator >(String s2);
-	bool operator <(String s2);
-	bool operator >=(String s2);
-	bool operator <=(String s2);
-	bool operator !=(String s2);
-	bool operator ==(String s2);
+	bool operator >(String& s2);
+	bool operator <(String& s2);
+	bool operator >=(String& s2);
+	bool operator <=(String& s2);
+	bool operator !=(String& s2);
+	bool operator ==(String& s2);
 
 	friend ostream& operator <<(ostream& out, String& obj);
 	friend istream& operator >>(istream& in, String& obj);
@@ -72,7 +78,7 @@ class String{
 	friend bool my_strrchr(String& str, char ch);
 	friend bool my_strstr(const String& mainstr, const String& substr);
 };
-
+int String::count=0;
 /*** default constructor; string s1; ***/
 String :: String():str(nullptr), length(0){}
 
@@ -119,7 +125,7 @@ char* String :: end(void){
 /*** operator overloaded member function ***/
 String& String :: operator =(String& s1){    // s2 = s1;
 	length = s1.length;
-	delete str;
+	delete[] str;
 	str = new char[length+1];
 	
 	mystrcpy(str, s1.str, length);
@@ -127,7 +133,7 @@ String& String :: operator =(String& s1){    // s2 = s1;
 }
 String& String :: operator = (const char* ptr){
 	length = mystrlen(ptr);
-	delete str;
+	delete[] str;
 	str = new char[length+1];
 	mystrcpy(str, ptr, length);
 	
@@ -149,12 +155,13 @@ String String :: operator +(String& s1){ // +ope principal: doesn't modify its o
 	result.length = length + s1.length;
 	result.str = new char[result.length +1];
 	mystrcpy(result.str, str, result.length);
-
-	for(int i=0; s1.str[i]; i++){
+	
+	int i;
+	for(i=0; s1.str[i]; i++){
 		result.str[length + i] = s1.str[i]; // overwrite '\0' with first character of s2.str
 	}
-	result.str[result.length] = '\0';
-	return move(result);  // call move constructor rather than copy
+	result.str[length+i] = '\0';
+	return result;  // call move constructor rather than copy
 
 }
 String& String :: operator +=(String& s1){
@@ -166,7 +173,7 @@ String& String :: operator +=(String& s1){
                 temp[j++] = s1.str[i]; // overwrite '\0' with first character of s1.str
         }
 	temp[j] = '\0';
-        delete str;     // free resource pointed by str as content already copied to temp;
+        delete[] str;     // free resource pointed by str as content already copied to temp;
         str = temp;     // str point the resource pointed by temp;
         temp = nullptr; // avoid temp to become dangling pointer
         return *this;   // safely return the object reference
@@ -177,7 +184,7 @@ String String::operator+(const char* ptr){
 
 	String temp;
 	temp.length = length + mystrlen(ptr);
-	temp.str = new char[length + 1];
+	temp.str = new char[temp.length + 1];
 
 	int i=0, j= 0;
 	while(str[i]){
@@ -227,7 +234,7 @@ String String::operator+(const char ch){
 	temp.str[i++] = ch;
 	temp.str[i] = '\0';
 
-	return temp;
+	return move(temp);
 
 }
 String& String::operator+=(const char ch){
@@ -257,7 +264,7 @@ char& String :: operator [](int index){
 		throw out_of_range("Index out of range");
 	return str[index];
 }
-bool String :: operator >(String s2){
+bool String :: operator >(String& s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
@@ -267,7 +274,7 @@ bool String :: operator >(String s2){
 	}
 	return *(str+i) > *(s2.str+i);	
 }
-bool String :: operator <(String s2){
+bool String :: operator <(String& s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
@@ -278,7 +285,7 @@ bool String :: operator <(String s2){
 	return *(str+i) < *(s2.str+i);	
 
 }
-bool String :: operator >=(String s2){
+bool String :: operator >=(String& s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
@@ -289,7 +296,7 @@ bool String :: operator >=(String s2){
 	return *(str+i) >= *(s2.str+i);	
 
 }
-bool String :: operator <=(String s2){
+bool String :: operator <=(String& s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
@@ -300,7 +307,7 @@ bool String :: operator <=(String s2){
 	return *(str+i) <= *(s2.str+i);	
 
 }
-bool String :: operator != (String s2){
+bool String :: operator != (String& s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
@@ -311,7 +318,7 @@ bool String :: operator != (String s2){
 	return *(str+i) != *(s2.str+i);	
 
 }
-bool String :: operator ==(String s2){
+bool String :: operator ==(String& s2){
 	int i = 0;
 	while(*(str+i) && *(s2.str+i)){
 		if(*(str + i) != *(s2.str + i)){
@@ -596,57 +603,62 @@ int main() {
 
 	String s1("vector india");
 	s1[0] = 's';
-
 	cout << "s1 = ";
 	s1.getstr();
+	
 	cout<<"-------------------------------------------"<<endl;
 	String s2 = "bangalore";
-	cout<<"s2  = ";
-	s2.getstr();
+	cout<<"s2  = "<<s2<<endl;
 	cout << "Length of s2 = " << s2.len() << endl;
 
+	// Concatenation: Case 1
 	cout<<"-------------------------------------------"<<endl;
 	String s3;
-
-	// Concatenation: Case 1
-	cout
 	s3 = s1 + s2;
-	cout << "s3 = ";
+	cout<<"s1 = "<<s1<<", s2 = "<<s2<<endl;
+	cout << "s3 = s1+s2 => ";
 	s3.getstr();
 
 	// Case 2
 	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<", s1 = "<<s1<<endl; 
 	s3 += s1;
-	cout << "After s3 += s1, s3 = " << s3 << endl;
+	cout << "s3 += s1 => " << s3 << endl;
 
 	// Case 3
 	cout<<"-------------------------------------------"<<endl;
-	s3 = s1 + "vector";
 	cout << "s1 = " << s1 << endl;
+	s3 = s1 + "vector";
+	cout<<" s3 = s1 + \"vector\" => "<<s3<<endl;
 
 	// Case 4:
 	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
 	s3 = "vector" + s1;
-	cout << "s3 = vector + s1 = " << s3 << endl;
+	cout << "s3 = \"vector\" + s1 => " << s3 << endl;
 
 	// Case 5
 	cout<<"-------------------------------------------"<<endl;
-	cout << "s3 += \"Vector\" " << endl;
+	cout<<"s3 = "<<s3<<endl;
+	cout << "s3 += \"Vector\" => ";
 	s3 += "Vector";
-	cout << "s3 = " << s3 << endl;
+	cout <<s3 << endl;
 
 	// Case 6
 	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
 	s3 = s1 + 'x';
-	cout << "s1 + 'x' = " << s3 << endl;
+	cout << "s3 = s1 + 'x' => " << s3 << endl;
 
 	// Case 7
 	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
 	s3 = 'x' + s1;
 	cout << "'x' + s1 = " << s3 << endl;
 
 	// Case 8
 	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<endl;
 	s3 += 'x';
 	cout << "s3 += 'x' = " << s3 << endl;
 	cout << "Length of s3 = " << s3.len() << endl;
@@ -672,8 +684,21 @@ int main() {
 	cout << "s5 = ";
 	s5.getstr();
 	cout << "Length of s5 = " << s5.len() << endl;
+	cout<<"--------------------------------------------"<<endl;
+	
+	// comparison operator
+	cout<<"*********** String Comparision *************"<<endl;
+	cout<<"--------------------------------------------"<<endl;
+	cout<<"s4 = "<<s4<<endl;
+	cout<<"s5 = "<<s5<<endl;
+	cout<<"s4 >  s5 => "<< (s4>s5) << endl;
+	cout<<"s4 >= s5 => "<< (s4>=s5) << endl;
+	cout<<"s4 <  s5 => "<< (s4<s5) << endl;
+	cout<<"s4 <= s5 => "<< (s4<=s5) << endl;
+	cout<<"s4 == s5 => "<< (s4==s5) << endl;
+	cout<<"s4 != s5 => "<< (s4!=s5) << endl;
+	cout<<"--------------------------------------------"<<endl;
 
-	cout<<"-------------------------------------------"<<endl;
 	return 0;
 }
 // Non member function definition
