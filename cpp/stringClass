@@ -18,35 +18,46 @@
 
 ## Member function
 ---------------------------------------------------------
-String();
-String(const char* p);
-String(String& t);
-String(String&& other);  // Move constructor
+/*** Constructor ***/
+String();		// default
+String(const char* p);	// parameterised
+String(String&& other); // move 
+String(String& t);	// deep copy
+~string();
+
+/*** member function ***/
 void getstr(void);
 int len(void);
 char* begin(void);
-char* end(void);
+char* end(void);	
+	/*** operator overloaded member function ***/
+String& operator=(String& s2);
+String& operator=(const char* ptr);
+String& operator=(String&& other);  // Move assignment
 
-/*** operator overloaded member function ***/
-String& operator =(String& s2);
-String& operator =(const char* ptr);
-String& operator=(String&& other); // Move assignment(=) operator
 String operator +(String&);
 String& operator +=(String&);
+String operator+(const char* ); // def s1 + "abc"
+String& operator +=(const char*);
+String operator+(const char );  // def s1 + 'a'
+String& operator +=(const char ch);
+	
 char& operator [](int i);
-bool operator >(String s2);
-bool operator <(String s2);
-bool operator >=(String s2);
-bool operator <=(String s2);
-bool operator !=(String s2);
-bool operator ==(String s2);
-
+bool operator >(String& s2);
+bool operator <(String& s2);
+bool operator >=(String& s2);
+bool operator <=(String& s2);
+bool operator !=(String& s2);
+bool operator ==(String& s2);
 
 ##Friend function
 -----------------------------------------------------------
 friend ostream& operator <<(ostream& out, String& obj);
 friend istream& operator >>(istream& in, String& obj);
 
+friend String operator+(const char* ptr, String& obj);
+friend String operator+(const char ch, String& obj);
+/*** friend function ***/
 friend unsigned int my_strlen(String& s);
 friend void my_strcpy(String& s1, String& s2);
 friend void my_strncpy(String& dest, const String& src, unsigned const int len);
@@ -78,77 +89,109 @@ friend bool my_strstr(const String& mainstr, const String& substr);
 -----------------------------------------------------------------------------
 Note: s1 += 'a' is possible but its reverse('a' += s1) not possible, b/c 'a' is not valid m/r location.
  
+
 Performed Testcases:
 ------------------------------------------------------------------------
-/*** main function ***/
+/*** main.cpp ***/
 int main() {
-    
-    String s1("vector india");
-    s1[0] = 's';  
 
-    cout << "s1 = ";
-    s1.getstr();  
+	String s1("vector india");
+	s1[0] = 's';
+	cout << "s1 = ";
+	s1.getstr();
+	
+	cout<<"-------------------------------------------"<<endl;
+	String s2 = "bangalore";
+	cout<<"s2  = "<<s2<<endl;
+	cout << "Length of s2 = " << s2.len() << endl;
 
-    String s2 = "bangalore";
-    s2.getstr();
-    cout << "Length of s2 = " << s2.len() << endl;
+	// Concatenation: Case 1
+	cout<<"-------------------------------------------"<<endl;
+	String s3;
+	s3 = s1 + s2;
+	cout<<"s1 = "<<s1<<", s2 = "<<s2<<endl;
+	cout << "s3 = s1+s2 => ";
+	s3.getstr();
 
-    String s3;
+	// Case 2
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<", s1 = "<<s1<<endl; 
+	s3 += s1;
+	cout << "s3 += s1 => " << s3 << endl;
 
-    // Concatenation: Case 1
-    s3 = s1 + s2;
-    cout << "s3 = ";
-    s3.getstr();
+	// Case 3
+	cout<<"-------------------------------------------"<<endl;
+	cout << "s1 = " << s1 << endl;
+	s3 = s1 + "vector";
+	cout<<" s3 = s1 + \"vector\" => "<<s3<<endl;
 
-    // Case 2
-    s3 += s1;
-    cout << "After s3 += s1, s3 = " << s3 << endl;
+	// Case 4:
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
+	s3 = "vector" + s1;
+	cout << "s3 = \"vector\" + s1 => " << s3 << endl;
 
-    // Case 3
-    s3 = s1 + "vector";
-    cout << "s1 = " << s1 << endl;
+	// Case 5
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<endl;
+	cout << "s3 += \"Vector\" => ";
+	s3 += "Vector";
+	cout <<s3 << endl;
 
-    // Case 4: 
-    s3 = "vector" + s1;
-    cout << "s3 = vector + s1 = " << s3 << endl;
+	// Case 6
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
+	s3 = s1 + 'x';
+	cout << "s3 = s1 + 'x' => " << s3 << endl;
 
-    // Case 5:
-    cout << "Appending \"Vector\" using += operator..." << endl;
-    s3 += "Vector";
-    cout << "s3 = " << s3 << endl;
+	// Case 7
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
+	s3 = 'x' + s1;
+	cout << "'x' + s1 = " << s3 << endl;
 
-    // Case 6: String + character
-    s3 = s1 + 'x';
-    cout << "s1 + 'x' = " << s3 << endl;
-
-    // Case 7: character + String
-    s3 = 'x' + s1;
-    cout << "'x' + s1 = " << s3 << endl;
-
-    // Case 8: += character
-    s3 += 'x';
-    cout << "s3 += 'x' = " << s3 << endl;
+	// Case 8
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<endl;
+	s3 += 'x';
+	cout << "s3 += 'x' = " << s3 << endl;
 	cout << "Length of s3 = " << s3.len() << endl;
 
-    // [] and << overload 
-    cout << "Characters of s3: ";
-    for (int i = 0; i < s3.len(); i++) {
-        cout << s3[i] << " ";
-    }
-    cout << endl;
+	// [] and << overload
+	cout<<"-------------------------------------------"<<endl;
+	cout << "Characters of s3: ";
+	for (int i = 0; i < s3.len(); i++) {
+		cout << s3[i] << " ";
+	}
+	cout << endl;
+	
+	// >> overload and chaining support
+	cout<<"-------------------------------------------"<<endl;
+	String s4, s5;
+	cout << "Enter two strings (s4 and s5): ";
+	cin >> s4 >> s5;
 
-    // Case 10: Input and Output using >> and <<
-    String s4, s5;
-    cout << "Enter two strings (s4 and s5): ";
-    cin >> s4 >> s5;
+	cout << "S4: " << s4 << endl;
+	cout << "Length of s4 = " << s4.len() << endl;
 
-    cout << "S4: " << s4 << endl;
-    cout << "Length of s4 = " << s4.len() << endl;
+	cout<<"-------------------------------------------"<<endl;
+	cout << "s5 = ";
+	s5.getstr();
+	cout << "Length of s5 = " << s5.len() << endl;
+	cout<<"--------------------------------------------"<<endl;
+	
+	// comparison operator
+	cout<<"*********** String Comparision *************"<<endl;
+	cout<<"--------------------------------------------"<<endl;
+	cout<<"s4 = "<<s4<<endl;
+	cout<<"s5 = "<<s5<<endl;
+	cout<<"s4 >  s5 => "<< (s4>s5) << endl;
+	cout<<"s4 >= s5 => "<< (s4>=s5) << endl;
+	cout<<"s4 <  s5 => "<< (s4<s5) << endl;
+	cout<<"s4 <= s5 => "<< (s4<=s5) << endl;
+	cout<<"s4 == s5 => "<< (s4==s5) << endl;
+	cout<<"s4 != s5 => "<< (s4!=s5) << endl;
+	cout<<"--------------------------------------------"<<endl;
 
-    cout << "s5 = ";
-    s5.getstr();
-    cout << "Length of s5 = " << s5.len() << endl;
-
-    return 0;
+	return 0;
 }
-
