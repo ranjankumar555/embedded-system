@@ -1,8 +1,7 @@
 #include <iostream>
+#include<typeinfo>
 using namespace std;
 #define SIZE 5
-
-
 template <class type>
 class Stack
 {
@@ -16,14 +15,15 @@ class Stack
 			top = -1;
 			for (int i = 0; i < SIZE; i++)
 			{
-				stk[i] = 0;
+				stk[i] = type();
 			}
 		}
-		void push();
-		void pop();
-		void get_top();
-		void display_stack();
-		bool isempty();
+
+	void push();
+	void pop();
+	void get_top();
+	void display_stack();
+	bool isempty();
 };
 	template <class type>
 void Stack<type>::push()
@@ -95,7 +95,7 @@ int main()
 	Stack<char> c_stk;
 	Stack<float> f_stk;
 	Stack<double> d_stk;
-	//Stack<string> s_stk;
+	Stack<string> s_stk;
 	while (1)
 	{
 		cout << "******** Main Menu *******" << endl;
@@ -390,7 +390,7 @@ int main()
 
 			case 5:
 				cout << "\033[32mstring stack application ready to use\033[0m " << endl;
-				/*if (wrongOptionCount == 1)
+				if (wrongOptionCount == 1)
 				  {
 				  continue_oldStack_newStack(s_stk);
 				  }
@@ -453,7 +453,7 @@ int main()
 				  flag = 0;
 				  break;
 				  }
-				  }*/
+				  }
 				wrongOptionCount = 0;
 				break;
 			case 6:
