@@ -408,8 +408,9 @@ String operator+(const char ch, String& obj){
 
 	temp.str[i] = '\0';
 
-	return temp;    
+	return move(temp);    
 }
+
 /*** friend function ***/
 unsigned int my_strlen(String& obj){
 	int i;
@@ -662,7 +663,7 @@ int main() {
 	s3 += 'x';
 	cout << "s3 += 'x' = " << s3 << endl;
 	cout << "Length of s3 = " << s3.len() << endl;
-
+	
 	// [] and << overload
 	cout<<"-------------------------------------------"<<endl;
 	cout << "Characters of s3: ";
@@ -671,7 +672,14 @@ int main() {
 	}
 	cout << endl;
 	
+	//hybrid concatenation 
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"\"Hello\" + s2 + \" Again\" + '!'"<<endl;;
+	String strcat = "Hello " + s2 + " Again" + '!';
+	cout<<strcat<<endl;
+
 	// >> overload and chaining support
+	cout<<"*********** String Comparision *************"<<endl;
 	cout<<"-------------------------------------------"<<endl;
 	String s4, s5;
 	cout << "Enter two strings (s4 and s5): ";
@@ -687,7 +695,6 @@ int main() {
 	cout<<"--------------------------------------------"<<endl;
 	
 	// comparison operator
-	cout<<"*********** String Comparision *************"<<endl;
 	cout<<"--------------------------------------------"<<endl;
 	cout<<"s4 = "<<s4<<endl;
 	cout<<"s5 = "<<s5<<endl;
@@ -698,7 +705,6 @@ int main() {
 	cout<<"s4 == s5 => "<< (s4==s5) << endl;
 	cout<<"s4 != s5 => "<< (s4!=s5) << endl;
 	cout<<"--------------------------------------------"<<endl;
-
 	return 0;
 }
 // Non member function definition
