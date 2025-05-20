@@ -90,7 +90,7 @@ int main()
 {
 	int op, op1, op2, wrongOptionCount = 0, wrongOptionCount1 = 0, flag = 0;
 	bool isFirstTime = 0;
-	bool isFirstTime1 = 0;
+	bool isFirstTime = 0;
 
 	Stack<int> i_stk;
 	Stack<char> c_stk;
@@ -127,7 +127,7 @@ int main()
 					switch (op1)
 					{
 						case 1:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(i_stk);
 							}
@@ -137,7 +137,7 @@ int main()
 							break;
 
 						case 2:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(i_stk);
 							}
@@ -147,7 +147,7 @@ int main()
 
 							break;
 						case 3:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(i_stk);
 							}
@@ -157,7 +157,7 @@ int main()
 
 							break;
 						case 4:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(i_stk);
 							}
@@ -171,7 +171,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime1 = 1;
+							isFirstTime = 1;
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -185,7 +185,7 @@ int main()
 
 			case 2:
 				cout << "\033[32mchar stack application ready to use\033[0m" << endl;
-				if (wrongOptionCount == 1 && isFirstTime1)
+				if (wrongOptionCount == 1 && isFirstTime)
 				{
 					continue_oldStack_newStack(c_stk);
 				}
@@ -197,7 +197,7 @@ int main()
 					switch (op1)
 					{
 						case 1:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(c_stk);
 							}
@@ -207,7 +207,7 @@ int main()
 							break;
 
 						case 2:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(c_stk);
 							}
@@ -217,7 +217,7 @@ int main()
 
 							break;
 						case 3:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(c_stk);
 							}
@@ -227,7 +227,7 @@ int main()
 
 							break;
 						case 4:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(c_stk);
 							}
@@ -241,7 +241,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime1 = 1;
+							isFirstTime = 1;
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -255,7 +255,7 @@ int main()
 
 			case 3:
 				cout << "\033[32mfloat stack application ready to use\033[0m " << endl;
-				if (wrongOptionCount == 1 && isFirstTime1)
+				if (wrongOptionCount == 1 && isFirstTime)
 				{
 					continue_oldStack_newStack(f_stk);
 				}
@@ -267,7 +267,7 @@ int main()
 					switch (op1)
 					{
 						case 1:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(f_stk);
 							}
@@ -277,7 +277,7 @@ int main()
 							break;
 
 						case 2:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(f_stk);
 							}
@@ -287,7 +287,7 @@ int main()
 
 							break;
 						case 3:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(f_stk);
 							}
@@ -297,7 +297,7 @@ int main()
 
 							break;
 						case 4:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(f_stk);
 							}
@@ -311,7 +311,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime1 = 1;
+							isFirstTime = 1;
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -325,7 +325,7 @@ int main()
 
 			case 4:
 				cout << "\033[32mdouble stack application ready to use\033[0m" << endl;
-				if (wrongOptionCount == 1 && isFirstTime1)
+				if (wrongOptionCount == 1 && isFirstTime)
 				{
 					continue_oldStack_newStack(d_stk);
 				}
@@ -337,7 +337,7 @@ int main()
 					switch (op1)
 					{
 						case 1:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(d_stk);
 							}
@@ -347,7 +347,7 @@ int main()
 							break;
 
 						case 2:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(d_stk);
 							}
@@ -357,7 +357,7 @@ int main()
 
 							break;
 						case 3:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(d_stk);
 							}
@@ -367,7 +367,7 @@ int main()
 
 							break;
 						case 4:
-							if (wrongOptionCount1 == 1 && isFirstTime1)
+							if (wrongOptionCount1 == 1 && isFirstTime)
 							{
 								continue_oldStack_newStack(d_stk);
 							}
@@ -381,7 +381,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime1 = 1;
+							isFirstTime = 1;
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -395,7 +395,7 @@ int main()
 
 			case 5:
 				cout << "\033[32mstring stack application ready to use\033[0m " << endl;
-				if (wrongOptionCount == 1 && isFirstTime1)
+				if (wrongOptionCount == 1 && isFirstTime)
 				  {
 				  continue_oldStack_newStack(s_stk);
 				  }
@@ -407,7 +407,7 @@ int main()
 				  switch (op1)
 				  {
 				  case 1:
-				  if (wrongOptionCount1 == 1 && isFirstTime1)
+				  if (wrongOptionCount1 == 1 && isFirstTime)
 				  {
 				  continue_oldStack_newStack(s_stk);
 				  }
@@ -417,7 +417,7 @@ int main()
 				  break;
 
 				  case 2:
-				  if (wrongOptionCount1 == 1 && isFirstTime1)
+				  if (wrongOptionCount1 == 1 && isFirstTime)
 				  {
 				  continue_oldStack_newStack(s_stk);
 				  }
@@ -427,7 +427,7 @@ int main()
 
 				  break;
 				  case 3:
-				  if (wrongOptionCount1 == 1 && isFirstTime1)
+				  if (wrongOptionCount1 == 1 && isFirstTime)
 				  {
 				  continue_oldStack_newStack(s_stk);
 				  }
@@ -437,7 +437,7 @@ int main()
 
 				  break;
 				  case 4:
-				  if (wrongOptionCount1 == 1 && isFirstTime1)
+				  if (wrongOptionCount1 == 1 && isFirstTime)
 				  {
 				  continue_oldStack_newStack(s_stk);
 				  }
@@ -451,7 +451,7 @@ int main()
 				  break; // go to main menu
 
 				  default:
-					isFirstTime1 = 1;
+					isFirstTime = 1;
 				  	display_warning(wrongOptionCount1);
 				  }
 				  if (flag) //exit from submenu while
@@ -467,7 +467,7 @@ int main()
 				cout << "\033[35mBye...\033[0m" << endl;
 				exit(0);
 			default:
-				isFirstTime = 1;
+				isFirstTime = 0;
 				display_warning(wrongOptionCount);
 		}
 	}
