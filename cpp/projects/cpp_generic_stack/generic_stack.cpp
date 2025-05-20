@@ -90,7 +90,7 @@ int main()
 {
 	int op, op1, op2, wrongOptionCount = 0, wrongOptionCount1 = 0, flag = 0;
 	bool isFirstTime = 0;
-	bool isFirstTime = 0;
+	bool isFirstTime1 = 0;
 
 	Stack<int> i_stk;
 	Stack<char> c_stk;
@@ -119,6 +119,7 @@ int main()
 				{
 					continue_oldStack_newStack(i_stk);
 				}
+				
 				while (1)
 				{
 					displaySubMenu();
@@ -133,6 +134,7 @@ int main()
 							}
 
 							i_stk.push();
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 							break;
 
@@ -142,7 +144,7 @@ int main()
 								continue_oldStack_newStack(i_stk);
 							}
 							i_stk.pop();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -152,7 +154,7 @@ int main()
 								continue_oldStack_newStack(i_stk);
 							}
 							i_stk.get_top();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -162,7 +164,7 @@ int main()
 								continue_oldStack_newStack(i_stk);
 							}
 							i_stk.display_stack();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -171,7 +173,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime = 1;
+							
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -203,6 +205,7 @@ int main()
 							}
 
 							c_stk.push();
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 							break;
 
@@ -212,7 +215,7 @@ int main()
 								continue_oldStack_newStack(c_stk);
 							}
 							c_stk.pop();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -222,7 +225,7 @@ int main()
 								continue_oldStack_newStack(c_stk);
 							}
 							c_stk.get_top();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -232,7 +235,7 @@ int main()
 								continue_oldStack_newStack(c_stk);
 							}
 							c_stk.display_stack();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -241,7 +244,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime = 1;
+							
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -273,6 +276,7 @@ int main()
 							}
 
 							f_stk.push();
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 							break;
 
@@ -282,7 +286,7 @@ int main()
 								continue_oldStack_newStack(f_stk);
 							}
 							f_stk.pop();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -292,7 +296,7 @@ int main()
 								continue_oldStack_newStack(f_stk);
 							}
 							f_stk.get_top();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -302,7 +306,7 @@ int main()
 								continue_oldStack_newStack(f_stk);
 							}
 							f_stk.display_stack();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -311,7 +315,6 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime = 1;
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -343,6 +346,7 @@ int main()
 							}
 
 							d_stk.push();
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 							break;
 
@@ -352,7 +356,7 @@ int main()
 								continue_oldStack_newStack(d_stk);
 							}
 							d_stk.pop();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -362,7 +366,7 @@ int main()
 								continue_oldStack_newStack(d_stk);
 							}
 							d_stk.get_top();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -372,7 +376,7 @@ int main()
 								continue_oldStack_newStack(d_stk);
 							}
 							d_stk.display_stack();
-
+							isFirstTime = 1;
 							wrongOptionCount1 = 0;
 
 							break;
@@ -381,7 +385,6 @@ int main()
 							break; // go to main menu
 
 						default:
-							isFirstTime = 1;
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -413,6 +416,7 @@ int main()
 				  }
 
 				  s_stk.push();
+				  isFirstTime = 1;
 				  wrongOptionCount1 = 0;
 				  break;
 
@@ -422,7 +426,7 @@ int main()
 				  continue_oldStack_newStack(s_stk);
 				  }
 				  s_stk.pop();
-
+				  isFirstTime = 1;
 				  wrongOptionCount1 = 0;
 
 				  break;
@@ -432,7 +436,7 @@ int main()
 				  continue_oldStack_newStack(s_stk);
 				  }
 				  s_stk.get_top();
-
+					isFirstTime = 1;
 				  wrongOptionCount1 = 0;
 
 				  break;
@@ -442,7 +446,7 @@ int main()
 				  continue_oldStack_newStack(s_stk);
 				  }
 				  s_stk.display_stack();
-
+					isFirstTime = 1;
 				  wrongOptionCount1 = 0;
 
 				  break;
@@ -451,7 +455,7 @@ int main()
 				  break; // go to main menu
 
 				  default:
-					isFirstTime = 1;
+					
 				  	display_warning(wrongOptionCount1);
 				  }
 				  if (flag) //exit from submenu while
@@ -506,7 +510,7 @@ void display_warning(int &wrongOptionCount1)
 	}
 	wrongOptionCount1++;
 }
-	template<class type>
+template<class type>
 void continue_oldStack_newStack(Stack<type> &stk)
 {
 	int op2;
