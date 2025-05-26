@@ -1,3 +1,11 @@
-ip address : logical identification of a system
-port address: tell particular system
-physical address : hardware address/ mac addr
+1. WAP to copy one file data to N no of destination files.
+       Note: provide file names through command line argumnets
+2. WAP to reverse the content of a file
+3. WAP to reverse the data word by word and store the result in same file?
+4.WAP to reverse the data line by line and store the result in same file?
+5.WAP to sort the data in a file and store the result in same file?
+6.WAP to sort the data in a file word by word and store the result in same file?
+7.WAP to sort the data in a file line by line and store the result in same file?
+8.WAP to delete a particular character in a file?
+9.WAP to delete a particular word in a file?
+10.WAP to delete a particular line  in a file?

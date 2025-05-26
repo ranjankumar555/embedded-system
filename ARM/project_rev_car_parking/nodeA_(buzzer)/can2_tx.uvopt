@@ -200,8 +200,8 @@
       <Focus>0</Focus>
       <ColumnNumber>25</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>68</TopLine>
-      <CurrentLine>75</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node A (TX)\uart0_driver.c</PathWithFileName>
       <FilenameWithoutPath>uart0_driver.c</FilenameWithoutPath>
@@ -240,10 +240,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>37</ColumnNumber>
+      <ColumnNumber>3</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>4</TopLine>
+      <CurrentLine>22</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node A (TX)\eint0.c</PathWithFileName>
       <FilenameWithoutPath>eint0.c</FilenameWithoutPath>
@@ -254,10 +254,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>7</ColumnNumber>
+      <ColumnNumber>8</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>16</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node A (TX)\nodeA_driver.c</PathWithFileName>
       <FilenameWithoutPath>nodeA_driver.c</FilenameWithoutPath>
@@ -268,10 +268,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>16</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>93</TopLine>
-      <CurrentLine>105</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>20</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node A (TX)\nodeA_main.c</PathWithFileName>
       <FilenameWithoutPath>nodeA_main.c</FilenameWithoutPath>
@@ -306,7 +306,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <FileNumber>10</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -325,8 +325,14 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>6</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
+        <Doc>
+          <Name>..\Node A (TX)\eint0.c</Name>
+          <ColumnNumber>3</ColumnNumber>
+          <TopLine>4</TopLine>
+          <CurrentLine>22</CurrentLine>
+        </Doc>
         <Doc>
           <Name>..\..\LCD4bit_interfacing\lcd4bitDriver.c</Name>
           <ColumnNumber>22</ColumnNumber>
@@ -335,21 +341,21 @@
         </Doc>
         <Doc>
           <Name>..\Node A (TX)\headerb.h</Name>
-          <ColumnNumber>118</ColumnNumber>
-          <TopLine>8</TopLine>
-          <CurrentLine>14</CurrentLine>
+          <ColumnNumber>7</ColumnNumber>
+          <TopLine>51</TopLine>
+          <CurrentLine>71</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node A (TX)\uart0_driver.c</Name>
           <ColumnNumber>25</ColumnNumber>
-          <TopLine>68</TopLine>
-          <CurrentLine>75</CurrentLine>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node A (TX)\nodeA_driver.c</Name>
-          <ColumnNumber>7</ColumnNumber>
+          <ColumnNumber>8</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>16</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node A (TX)\delay.c</Name>
@@ -365,15 +371,9 @@
         </Doc>
         <Doc>
           <Name>..\Node A (TX)\nodeA_main.c</Name>
-          <ColumnNumber>17</ColumnNumber>
-          <TopLine>93</TopLine>
-          <CurrentLine>104</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\Node A (TX)\eint0.c</Name>
-          <ColumnNumber>37</ColumnNumber>
+          <ColumnNumber>16</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <CurrentLine>20</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\p1.ini</Name>

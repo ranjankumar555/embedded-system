@@ -19,11 +19,11 @@ class Stack
 			}
 		}
 
-	void push();
-	void pop();
-	void get_top();
-	void display_stack();
-	bool isempty();
+		void push();
+		void pop();
+		void get_top();
+		void display_stack();
+		bool isempty();
 };
 	template <class type>
 void Stack<type>::push()
@@ -39,7 +39,7 @@ void Stack<type>::push()
 	cout << "\033[32m" << stk[top] << " pushed\033[0m" << endl;
 
 }
-template <class type>
+	template <class type>
 void Stack<type>::pop()
 {
 	if (top <= -1)
@@ -50,7 +50,7 @@ void Stack<type>::pop()
 	cout << "\033[32m" << stk[top--] << " popped\033[0m" << endl;
 
 }
-template <class type>
+	template <class type>
 void Stack<type>::get_top()
 {
 	if (isempty())
@@ -60,7 +60,7 @@ void Stack<type>::get_top()
 	}
 	cout << "\033[32m Top element: " << stk[top] <<"\033[0m"<< endl;
 }
-template <class type>
+	template <class type>
 void Stack<type>::display_stack()
 {
 	int i;
@@ -75,7 +75,7 @@ void Stack<type>::display_stack()
 	}
 	cout << endl;
 }
-template <class type>
+	template <class type>
 bool Stack<type>::isempty()
 {
 	return top <= -1;
@@ -119,7 +119,7 @@ int main()
 				{
 					continue_oldStack_newStack(i_stk);
 				}
-				
+
 				while (1)
 				{
 					displaySubMenu();
@@ -173,7 +173,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							
+
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -244,7 +244,7 @@ int main()
 							break; // go to main menu
 
 						default:
-							
+
 							display_warning(wrongOptionCount1);
 					}
 					if (flag)
@@ -399,71 +399,71 @@ int main()
 			case 5:
 				cout << "\033[32mstring stack application ready to use\033[0m " << endl;
 				if (wrongOptionCount == 1 && isFirstTime)
-				  {
-				  continue_oldStack_newStack(s_stk);
-				  }
-				  while (1)
-				  {
-				  displaySubMenu();
-				  cin >> op1;
-				  cout << "----------------------------------------" << endl;
-				  switch (op1)
-				  {
-				  case 1:
-				  if (wrongOptionCount1 == 1 && isFirstTime)
-				  {
-				  continue_oldStack_newStack(s_stk);
-				  }
+				{
+					continue_oldStack_newStack(s_stk);
+				}
+				while (1)
+				{
+					displaySubMenu();
+					cin >> op1;
+					cout << "----------------------------------------" << endl;
+					switch (op1)
+					{
+						case 1:
+							if (wrongOptionCount1 == 1 && isFirstTime)
+							{
+								continue_oldStack_newStack(s_stk);
+							}
 
-				  s_stk.push();
-				  isFirstTime = 1;
-				  wrongOptionCount1 = 0;
-				  break;
+							s_stk.push();
+							isFirstTime = 1;
+							wrongOptionCount1 = 0;
+							break;
 
-				  case 2:
-				  if (wrongOptionCount1 == 1 && isFirstTime)
-				  {
-				  continue_oldStack_newStack(s_stk);
-				  }
-				  s_stk.pop();
-				  isFirstTime = 1;
-				  wrongOptionCount1 = 0;
+						case 2:
+							if (wrongOptionCount1 == 1 && isFirstTime)
+							{
+								continue_oldStack_newStack(s_stk);
+							}
+							s_stk.pop();
+							isFirstTime = 1;
+							wrongOptionCount1 = 0;
 
-				  break;
-				  case 3:
-				  if (wrongOptionCount1 == 1 && isFirstTime)
-				  {
-				  continue_oldStack_newStack(s_stk);
-				  }
-				  s_stk.get_top();
-					isFirstTime = 1;
-				  wrongOptionCount1 = 0;
+							break;
+						case 3:
+							if (wrongOptionCount1 == 1 && isFirstTime)
+							{
+								continue_oldStack_newStack(s_stk);
+							}
+							s_stk.get_top();
+							isFirstTime = 1;
+							wrongOptionCount1 = 0;
 
-				  break;
-				  case 4:
-				  if (wrongOptionCount1 == 1 && isFirstTime)
-				  {
-				  continue_oldStack_newStack(s_stk);
-				  }
-				  s_stk.display_stack();
-					isFirstTime = 1;
-				  wrongOptionCount1 = 0;
+							break;
+						case 4:
+							if (wrongOptionCount1 == 1 && isFirstTime)
+							{
+								continue_oldStack_newStack(s_stk);
+							}
+							s_stk.display_stack();
+							isFirstTime = 1;
+							wrongOptionCount1 = 0;
 
-				  break;
-				  case 5:
-				  flag = 1;
-				  break; // go to main menu
+							break;
+						case 5:
+							flag = 1;
+							break; // go to main menu
 
-				  default:
-					
-				  	display_warning(wrongOptionCount1);
-				  }
-				  if (flag) //exit from submenu while
-				  {
-				  flag = 0;
-				  break;
-				  }
-				  }
+						default:
+
+							display_warning(wrongOptionCount1);
+					}
+					if (flag) //exit from submenu while
+					{
+						flag = 0;
+						break;
+					}
+				}
 				wrongOptionCount = 0;
 				break;
 			case 6:
@@ -510,7 +510,7 @@ void display_warning(int &wrongOptionCount1)
 	}
 	wrongOptionCount1++;
 }
-template<class type>
+	template<class type>
 void continue_oldStack_newStack(Stack<type> &stk)
 {
 	int op2;
