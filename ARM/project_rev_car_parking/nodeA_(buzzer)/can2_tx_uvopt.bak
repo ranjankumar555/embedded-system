@@ -240,10 +240,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>37</ColumnNumber>
+      <ColumnNumber>3</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>4</TopLine>
+      <CurrentLine>22</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node A (TX)\eint0.c</PathWithFileName>
       <FilenameWithoutPath>eint0.c</FilenameWithoutPath>
@@ -325,8 +325,14 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>3</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
+        <Doc>
+          <Name>..\Node A (TX)\eint0.c</Name>
+          <ColumnNumber>3</ColumnNumber>
+          <TopLine>4</TopLine>
+          <CurrentLine>22</CurrentLine>
+        </Doc>
         <Doc>
           <Name>..\..\LCD4bit_interfacing\lcd4bitDriver.c</Name>
           <ColumnNumber>22</ColumnNumber>
@@ -368,12 +374,6 @@
           <ColumnNumber>16</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>20</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\Node A (TX)\eint0.c</Name>
-          <ColumnNumber>37</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\p1.ini</Name>

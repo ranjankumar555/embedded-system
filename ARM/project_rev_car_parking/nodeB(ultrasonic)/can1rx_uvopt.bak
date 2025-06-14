@@ -198,10 +198,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>10</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>11</CurrentLine>
+      <TopLine>7</TopLine>
+      <CurrentLine>7</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node B (RX)\can1_rx_inte.c</PathWithFileName>
       <FilenameWithoutPath>can1_rx_inte.c</FilenameWithoutPath>
@@ -226,10 +226,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>24</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>7</TopLine>
-      <CurrentLine>7</CurrentLine>
+      <TopLine>16</TopLine>
+      <CurrentLine>16</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node B (RX)\hcsr04.c</PathWithFileName>
       <FilenameWithoutPath>hcsr04.c</FilenameWithoutPath>
@@ -242,8 +242,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>38</TopLine>
-      <CurrentLine>38</CurrentLine>
+      <TopLine>9</TopLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node B (RX)\nodeB_driver.c</PathWithFileName>
       <FilenameWithoutPath>nodeB_driver.c</FilenameWithoutPath>
@@ -256,8 +256,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>6</TopLine>
-      <CurrentLine>13</CurrentLine>
+      <TopLine>16</TopLine>
+      <CurrentLine>16</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node B (RX)\nodeB_main.c</PathWithFileName>
       <FilenameWithoutPath>nodeB_main.c</FilenameWithoutPath>
@@ -296,10 +296,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>40</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>6</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\can2_tx\p1.ini</PathWithFileName>
       <FilenameWithoutPath>p1.ini</FilenameWithoutPath>
@@ -311,31 +311,31 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>1</ActiveTab>
+      <ActiveTab>3</ActiveTab>
       <Documents>
         <Doc>
           <Name>..\Node B (RX)\nodeB_main.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>6</TopLine>
-          <CurrentLine>13</CurrentLine>
+          <TopLine>16</TopLine>
+          <CurrentLine>16</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node B (RX)\hcsr04.c</Name>
           <ColumnNumber>24</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>2</CurrentLine>
+          <TopLine>16</TopLine>
+          <CurrentLine>16</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node B (RX)\nodeB_driver.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>38</TopLine>
-          <CurrentLine>38</CurrentLine>
+          <TopLine>9</TopLine>
+          <CurrentLine>9</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node B (RX)\can1_rx_inte.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>11</CurrentLine>
+          <ColumnNumber>10</ColumnNumber>
+          <TopLine>7</TopLine>
+          <CurrentLine>7</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node B (RX)\header.h</Name>

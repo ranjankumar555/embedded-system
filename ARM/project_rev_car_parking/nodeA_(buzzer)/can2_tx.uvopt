@@ -256,8 +256,8 @@
       <Focus>0</Focus>
       <ColumnNumber>8</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>16</CurrentLine>
+      <TopLine>29</TopLine>
+      <CurrentLine>29</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Node A (TX)\nodeA_driver.c</PathWithFileName>
       <FilenameWithoutPath>nodeA_driver.c</FilenameWithoutPath>
@@ -325,7 +325,7 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>0</ActiveTab>
+      <ActiveTab>7</ActiveTab>
       <Documents>
         <Doc>
           <Name>..\Node A (TX)\eint0.c</Name>
@@ -354,8 +354,8 @@
         <Doc>
           <Name>..\Node A (TX)\nodeA_driver.c</Name>
           <ColumnNumber>8</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>16</CurrentLine>
+          <TopLine>29</TopLine>
+          <CurrentLine>29</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\Node A (TX)\delay.c</Name>
@@ -378,7 +378,7 @@
         <Doc>
           <Name>.\p1.ini</Name>
           <ColumnNumber>10</ColumnNumber>
-          <TopLine>7</TopLine>
+          <TopLine>1</TopLine>
           <CurrentLine>7</CurrentLine>
         </Doc>
         <Doc>
